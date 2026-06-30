@@ -9,9 +9,9 @@ export function Hero() {
   return (
     <section className="relative overflow-hidden bg-navy text-white">
       <GridGlow />
-      <div className="relative mx-auto max-w-7xl px-4 py-24 text-center sm:px-6 md:py-32 lg:px-8">
+      <div className="relative mx-auto max-w-9xl px-4 py-24 text-center sm:px-6 md:py-15 lg:px-8">
         <Reveal className="flex justify-center">
-          <span className="inline-flex items-center rounded-full border border-white/15 bg-white/5 px-4 py-1.5 text-xs font-medium tracking-wider text-white/70 uppercase">
+          <span className="inline-flex items-center rounded-full border border-white/15 bg-white/5 px-4 py-1.5 text-xl font-medium tracking-wider text-white/70 uppercase">
             HITEC University · Taxila
           </span>
         </Reveal>

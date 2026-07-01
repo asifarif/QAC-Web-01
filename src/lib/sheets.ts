@@ -144,3 +144,62 @@ const kpiSchema = z.object({
 export type Kpi = z.infer<typeof kpiSchema>;
 export const getKpis = () =>
   loadTab("kpis", kpiSchema, ["indicator", "target", "current"]);
+
+/* ----------------------------- programmes ----------------------------- */
+// Drives the Self-Assessment & Accreditation page. Each row is one programme.
+//
+// NOTE (review me): these helpers were added here because the file did not yet
+// contain getProgrammes()/splitProgrammes(). The read/render columns are
+// `programme | department | body | status`. The bucket a programme falls into
+// (accredited / sarUndergrad / graduate) is decided by splitProgrammes() from a
+// discriminator column — we read `category`, `track` and `level` and use
+// whichever is present, so it matches whatever your "programmes" tab actually
+// uses. If none is present we fall back to: has a council `body` -> accredited,
+// otherwise -> sarUndergrad. Adjust `programmeTrack` if your sheet differs.
+const programmeSchema = z.object({
+  programme: z.string().trim().min(1, "programme is required"),
+  department: z.string().trim().optional().default(""),
+  body: z.string().trim().optional().default(""),
+  status: z.string().trim().optional().default(""),
+  category: z.string().trim().optional().default(""),
+  track: z.string().trim().optional().default(""),
+  level: z.string().trim().optional().default(""),
+});
+export type Programme = z.infer<typeof programmeSchema>;
+export type ProgrammeGroups = {
+  accredited: Programme[];
+  sarUndergrad: Programme[];
+  graduate: Programme[];
+};
+
+export const getProgrammes = () =>
+  loadTab("programmes", programmeSchema, [
+    "programme", "department", "body", "status", "category", "track", "level",
+  ]);
+
+function programmeTrack(p: Programme): keyof ProgrammeGroups {
+  const hint = `${p.category} ${p.track} ${p.level}`.toLowerCase();
+  // Order matters: "undergraduate" contains "grad", so test "under" first.
+  if (hint.includes("under")) return "sarUndergrad";
+  if (
+    hint.includes("grad") ||
+    hint.includes("phd") ||
+    hint.includes("mphil") ||
+    hint.includes("m.phil")
+  )
+    return "graduate";
+  if (hint.includes("accredit") || hint.includes("council")) return "accredited";
+  if (hint.includes("sar") || hint.includes("self")) return "sarUndergrad";
+  // Fallback when no discriminator column is present.
+  return p.body.trim() !== "" ? "accredited" : "sarUndergrad";
+}
+
+export function splitProgrammes(items: Programme[]): ProgrammeGroups {
+  const groups: ProgrammeGroups = {
+    accredited: [],
+    sarUndergrad: [],
+    graduate: [],
+  };
+  for (const p of items) groups[programmeTrack(p)].push(p);
+  return groups;
+}

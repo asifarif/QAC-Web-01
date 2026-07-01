@@ -37,7 +37,10 @@ export default function RootLayout({
       lang="en"
       className={`${inter.variable} ${jakarta.variable} h-full antialiased`}
     >
-      <body className="flex min-h-full flex-col bg-background text-foreground">
+      <body
+        suppressHydrationWarning
+        className="flex min-h-full flex-col bg-background text-foreground"
+      >
         <SiteHeader />
         <main className="flex-1">{children}</main>
         <SiteFooter />

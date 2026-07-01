@@ -22,7 +22,7 @@ const features: Feature[] = [
     icon: ShieldCheck,
     title: "Quality Assurance & Self-Assessment",
     description:
-      "Quality mechanisms across the University and self-assessment of non-council programmes, per HEC guidelines.",
+      "Quality mechanisms across the University and self-assessment of programmes, per HEC guidelines.",
   },
   {
     icon: MessagesSquare,
@@ -33,13 +33,13 @@ const features: Feature[] = [
   {
     icon: Award,
     title: "Accreditation & Compliance",
-    description: "Support for PEC and NCEAC accreditation and HEC compliance.",
+    description: "Support for accreditation and compliance.",
   },
   {
     icon: LineChart,
     title: "University Rankings",
     description:
-      "Leading HITEC's participation in THE, QS and HEC rankings through data acquisition and submission.",
+      "Leading HITEC's participation in various rankings through data acquisition and submission.",
   },
   {
     icon: Users,
@@ -64,7 +64,7 @@ export function WhatWeDo() {
             What we do
           </h2>
           <p className="mt-4 text-base text-muted-foreground sm:text-lg">
-            Six focus areas through which the Directorate safeguards standards
+            Focus areas through which the Directorate safeguards standards
             and builds recognition for HITEC University.
           </p>
         </Reveal>

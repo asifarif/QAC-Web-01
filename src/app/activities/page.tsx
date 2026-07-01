@@ -10,9 +10,11 @@ export const metadata: Metadata = {
 
 // Run on the Node.js runtime (the Google auth libraries need Node APIs).
 export const runtime = "nodejs";
-// ISR: re-fetch the sheet at most every 5 minutes, so content edits appear in
-// production within ~5 minutes without a redeploy.
-export const revalidate = 300;
+// PHASE 1 (temporary diagnosis): force per-request rendering with no caching, so
+// sheet edits appear immediately on refresh. Reverted to ISR (revalidate = 300)
+// in phase 2 once instant, targeted revalidation is wired up.
+export const dynamic = "force-dynamic";
+export const revalidate = 0;
 
 export default async function ActivitiesPage() {
   const activities = await getActivities();

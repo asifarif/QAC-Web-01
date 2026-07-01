@@ -1,5 +1,6 @@
 import "server-only";
 import { cache } from "react";
+import { unstable_noStore as noStore } from "next/cache";
 import { GoogleSpreadsheet } from "google-spreadsheet";
 import { JWT } from "google-auth-library";
 import { z } from "zod";
@@ -26,6 +27,11 @@ async function loadTab<T>(
   schema: z.ZodType<T>,
   columns: readonly string[],
 ): Promise<T[]> {
+  // google-spreadsheet reads go through gaxios/node-fetch, not the fetch that
+  // Next patches, so we can't pass `cache: "no-store"` per request. Instead we
+  // opt the whole read out of Next's Data/Full-Route cache here, which marks any
+  // calling segment dynamic and guarantees the sheet is read fresh every time.
+  noStore();
   try {
     const doc = await getDoc();
     const sheet = doc.sheetsByTitle[title];

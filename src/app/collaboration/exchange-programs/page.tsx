@@ -1,17 +1,7 @@
-import type { Metadata } from "next";
+import { permanentRedirect } from "next/navigation";
 
-import { ComingSoon } from "@/components/coming-soon";
-
-export const metadata: Metadata = {
-  title: "Exchange Programs",
-};
-
-export default function ExchangeProgramsPage() {
-  return (
-    <ComingSoon
-      eyebrow="Collaboration"
-      title="Exchange Programs"
-      message="Content coming soon."
-    />
-  );
+// Renamed to /collaboration/student-exchange.
+// Preserve the old path with a permanent (308) redirect so links don't break.
+export default function ExchangeProgramsRedirect() {
+  permanentRedirect("/collaboration/student-exchange");
 }

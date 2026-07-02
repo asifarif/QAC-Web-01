@@ -12,17 +12,25 @@ export const metadata: Metadata = {
 export const runtime = "nodejs";
 
 const INTRO =
-  "Collaboration is the “C” in QA&C. Beyond assuring quality, the Directorate " +
-  "builds national and international linkages with partner institutions and " +
-  "facilitates student exchange — broadening the academic and cultural exposure " +
-  "of our students and faculty.";
+  "The Directorate promotes national and international collaborations that " +
+  "strengthen academic quality and create meaningful opportunities for students " +
+  "and faculty. Through partnerships with universities, organizations, and " +
+  "quality assurance networks, it supports knowledge exchange, institutional " +
+  "cooperation, and student exchange programmes that broaden academic and " +
+  "cultural experiences.";
 
 const sections = [
   {
-    title: "Exchange Programs",
-    href: "/collaboration/exchange-programs",
+    title: "Memberships & Networks",
+    href: "/collaboration/memberships",
     description:
-      "Student and faculty exchange opportunities with partner institutions.",
+      "National and international initiatives and quality assurance networks HITEC University is part of.",
+  },
+  {
+    title: "Student Exchange",
+    href: "/collaboration/student-exchange",
+    description:
+      "International exchange programmes that broaden students' academic and cultural experience.",
   },
 ];
 
@@ -40,7 +48,7 @@ export default async function CollaborationPage() {
           {INTRO}
         </p>
 
-        <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-12 grid gap-6 sm:grid-cols-2">
           {sections.map((section, index) => (
             <Reveal key={section.href} delay={index * 0.08}>
               <Link

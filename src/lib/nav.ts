@@ -30,8 +30,12 @@ export const navItems: NavItem[] = [
     href: "/collaboration",
     children: [
       {
-        title: "Exchange Programs",
-        href: "/collaboration/exchange-programs",
+        title: "Memberships & Networks",
+        href: "/collaboration/memberships",
+      },
+      {
+        title: "Student Exchange",
+        href: "/collaboration/student-exchange",
       },
     ],
   },

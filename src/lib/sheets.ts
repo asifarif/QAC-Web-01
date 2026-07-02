@@ -242,3 +242,19 @@ export async function getLiaisonOfficers(): Promise<LiaisonOfficer[]> {
   const rows = await loadTab("Liaison", liaisonSchema, ["name", "designation", "department", "order"]);
   return rows.sort((a, b) => (a.order ?? 1e9) - (b.order ?? 1e9));
 }
+/* ----------------------------- memberships ----------------------------- */
+const membershipSchema = z.object({
+  name: z.string().trim().min(1, "name is required"),
+  category: z.string().trim().optional().default(""),
+  logo: z.string().trim().optional().default(""),
+  url: z.string().trim().optional().default(""),
+  description: z.string().trim().optional().default(""),
+  order: optionalNum,
+});
+export type Membership = z.infer<typeof membershipSchema>;
+export async function getMemberships(): Promise<Membership[]> {
+  const rows = await loadTab("memberships", membershipSchema, [
+    "name", "category", "logo", "url", "description", "order",
+  ]);
+  return rows.sort((a, b) => (a.order ?? 1e9) - (b.order ?? 1e9));
+}

@@ -7,6 +7,7 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { Reveal } from "@/components/motion/reveal";
+import { focusAreas } from "@/content/focus-areas";
 
 // Local (serializable) shapes — mirrors sheets.ts without importing the
 // server-only module into this client component.
@@ -26,40 +27,18 @@ const MISSION =
 const MANDATE =
   "QA&C exists to translate the University's vision and mission into practice — by assuring the quality of academic programmes and services, supporting accreditation and compliance, representing the University in national and international rankings, and fostering collaboration and student exchange, all in line with HEC standards and international best practice.";
 
-const POLICY_ITEMS = [
-  "maintaining standards that meet or exceed HEC and accreditation requirements (PEC, NCEAC, NBEAC);",
-  "conducting regular self-assessment of non-council programmes and acting on findings;",
-  "gathering and responding to feedback from students, faculty, alumni, employers and offices;",
-  "representing the University fairly in national and international rankings;",
-  "building faculty and staff capacity in quality assurance;",
-  "and reviewing this policy periodically.",
-];
+const POLICY_INTRO =
+  "On behalf of the University, the Directorate of Quality Assurance & Collaborations is committed to:";
 
-const WHAT_WE_DO = [
-  {
-    title: "Quality Assurance & Self-Assessment",
-    desc: "Quality mechanisms and self-assessment of programmes, per HEC guidelines.",
-  },
-  {
-    title: "Surveys & Stakeholder Feedback",
-    desc: "Feedback from students, faculty, alumni, employers and offices.",
-  },
-  {
-    title: "Accreditation & Compliance",
-    desc: "Support for PEC, NCEAC and NBEAC accreditation and HEC compliance.",
-  },
-  {
-    title: "University Rankings",
-    desc: "Participation in national and international rankings.",
-  },
-  {
-    title: "Collaboration & Student Exchange",
-    desc: "Linkages with partner institutions and student exchange.",
-  },
-  {
-    title: "Capacity Building & Training",
-    desc: "Workshops on QA, SAR development, ethics and emerging tools.",
-  },
+const POLICY_ITEMS = [
+  "fostering a culture of quality and continuous improvement across all academic and administrative functions;",
+  "maintaining standards that meet or exceed HEC and accreditation-council requirements;",
+  "conducting regular self-assessment of programmes and acting on the findings;",
+  "gathering and responding to feedback from students, faculty, alumni, employers and administrative offices;",
+  "representing the University fairly and accurately in national and international rankings;",
+  "pursuing national and international collaborations and student exchange that uphold the University's academic standards and benefit its students;",
+  "building faculty and staff capacity in quality assurance; and",
+  "reviewing this policy periodically to keep it effective and relevant.",
 ];
 
 const triggerClass =
@@ -69,6 +48,8 @@ const labelClass =
   "block text-xs font-semibold tracking-wider text-navy uppercase";
 
 const cardClass = "rounded-lg bg-surface p-4 ring-1 ring-foreground/5";
+
+const highlightClass = "rounded-lg border-l-4 border-blue bg-blue/5 p-4";
 
 export function AboutAccordion({
   team,
@@ -91,23 +72,25 @@ export function AboutAccordion({
             Vision, Mission &amp; Mandate
           </AccordionTrigger>
           <AccordionContent className="pt-1 pb-6">
-            <div className="rounded-lg border-l-4 border-blue bg-blue/5 p-4">
-              <span className={labelClass}>University Vision</span>
-              <p className="mt-2 text-base leading-relaxed text-foreground italic">
-                {VISION}
-              </p>
-            </div>
-            <div className="mt-4">
-              <span className={labelClass}>University Mission</span>
-              <p className="mt-2 text-base leading-relaxed text-muted-foreground italic">
-                {MISSION}
-              </p>
-            </div>
-            <div className="mt-4">
-              <span className={labelClass}>Our Mandate</span>
-              <p className="mt-2 text-base leading-relaxed text-muted-foreground">
-                {MANDATE}
-              </p>
+            <div className="space-y-4">
+              <div className={highlightClass}>
+                <span className={labelClass}>University Vision</span>
+                <p className="mt-2 text-base leading-relaxed text-foreground italic">
+                  {VISION}
+                </p>
+              </div>
+              <div className={highlightClass}>
+                <span className={labelClass}>University Mission</span>
+                <p className="mt-2 text-base leading-relaxed text-foreground italic">
+                  {MISSION}
+                </p>
+              </div>
+              <div className={highlightClass}>
+                <span className={labelClass}>Our Mandate</span>
+                <p className="mt-2 text-base leading-relaxed text-foreground">
+                  {MANDATE}
+                </p>
+              </div>
             </div>
           </AccordionContent>
         </AccordionItem>
@@ -118,9 +101,7 @@ export function AboutAccordion({
             Quality Policy
           </AccordionTrigger>
           <AccordionContent className="pt-1 pb-6">
-            <p className="text-base text-muted-foreground">
-              On behalf of the University, the Directorate is committed to:
-            </p>
+            <p className="text-base text-muted-foreground">{POLICY_INTRO}</p>
             <ul className="mt-3 list-disc space-y-2 pl-5 text-base text-muted-foreground marker:text-blue">
               {POLICY_ITEMS.map((item) => (
                 <li key={item.slice(0, 24)}>{item}</li>
@@ -136,13 +117,13 @@ export function AboutAccordion({
           </AccordionTrigger>
           <AccordionContent className="pt-1 pb-6">
             <div className="grid gap-4 sm:grid-cols-2">
-              {WHAT_WE_DO.map((item) => (
+              {focusAreas.map((item) => (
                 <div key={item.title} className={cardClass}>
                   <span className="block font-semibold text-navy">
                     {item.title}
                   </span>
                   <span className="mt-1 block text-sm text-muted-foreground">
-                    {item.desc}
+                    {item.description}
                   </span>
                 </div>
               ))}

@@ -1,67 +1,8 @@
 import Link from "next/link";
-import {
-  Award,
-  GraduationCap,
-  LineChart,
-  MessagesSquare,
-  ShieldCheck,
-  Users,
-  type LucideIcon,
-} from "lucide-react";
 
 import { Card, CardDescription, CardTitle } from "@/components/ui/card";
 import { Reveal } from "@/components/motion/reveal";
-
-type Feature = {
-  icon: LucideIcon;
-  title: string;
-  description: string;
-  href: string;
-};
-
-const features: Feature[] = [
-  {
-    icon: ShieldCheck,
-    title: "Quality Assurance & Self-Assessment",
-    description:
-      "Quality mechanisms across the University and self-assessment of programmes, per HEC guidelines.",
-    href: "/quality-assurance",
-  },
-  {
-    icon: MessagesSquare,
-    title: "Surveys & Stakeholder Feedback",
-    description:
-      "Feedback from students, faculty, alumni, employers and offices, analysed and acted upon.",
-    href: "/surveys",
-  },
-  {
-    icon: Award,
-    title: "Accreditation & Compliance",
-    description: "Support for accreditation and compliance.",
-    href: "/quality-assurance/assessment-accreditation",
-  },
-  {
-    icon: LineChart,
-    title: "University Rankings",
-    description:
-      "Leading HITEC's participation in various rankings through data acquisition and submission.",
-    href: "/rankings",
-  },
-  {
-    icon: Users,
-    title: "Collaboration & Student Exchange",
-    description:
-      "Linkages with partner institutions and student exchange opportunities.",
-    href: "/collaboration",
-  },
-  {
-    icon: GraduationCap,
-    title: "Capacity Building & Training",
-    description:
-      "Workshops on quality assurance, SAR development, ethics and emerging tools.",
-    href: "/training",
-  },
-];
+import { focusAreas } from "@/content/focus-areas";
 
 export function WhatWeDo() {
   return (
@@ -78,12 +19,12 @@ export function WhatWeDo() {
         </Reveal>
 
         <div className="mt-14 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {features.map((feature, index) => {
-            const Icon = feature.icon;
+          {focusAreas.map((area, index) => {
+            const Icon = area.icon;
             return (
-              <Reveal key={feature.title} delay={(index % 3) * 0.08}>
+              <Reveal key={area.title} delay={(index % 3) * 0.08}>
                 <Link
-                  href={feature.href}
+                  href={area.href}
                   className="group block h-full rounded-xl transition-transform focus-visible:ring-2 focus-visible:ring-blue focus-visible:ring-offset-2 focus-visible:outline-none"
                 >
                   <Card className="h-full gap-0 p-6 transition-all duration-300 group-hover:-translate-y-1 group-hover:shadow-lg group-hover:ring-foreground/20">
@@ -91,10 +32,10 @@ export function WhatWeDo() {
                       <Icon className="size-6" />
                     </span>
                     <CardTitle className="text-lg text-navy">
-                      {feature.title}
+                      {area.title}
                     </CardTitle>
                     <CardDescription className="mt-2 leading-relaxed">
-                      {feature.description}
+                      {area.description}
                     </CardDescription>
                   </Card>
                 </Link>

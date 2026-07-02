@@ -22,24 +22,31 @@ const getDoc = cache(async () => {
 });
 
 // Generic loader: validate each row; skip (don't throw on) bad rows; [] on failure.
+// fail-fast wrapper so a slow Google call can't hang the request
+function withTimeout<T>(p: Promise<T>, ms: number, label: string): Promise<T> {
+  return Promise.race([
+    p,
+    new Promise<T>((_, reject) =>
+      setTimeout(() => reject(new Error(`[sheets] ${label} timed out after ${ms}ms`)), ms),
+    ),
+  ]);
+}
+
 async function loadTab<T>(
   title: string,
   schema: z.ZodType<T>,
   columns: readonly string[],
 ): Promise<T[]> {
-  // google-spreadsheet reads go through gaxios/node-fetch, not the fetch that
-  // Next patches, so we can't pass `cache: "no-store"` per request. Instead we
-  // opt the whole read out of Next's Data/Full-Route cache here, which marks any
-  // calling segment dynamic and guarantees the sheet is read fresh every time.
-  noStore();
-  try {
-    const doc = await getDoc();
+  // Keep this line ONLY if it's already there (preserves always-fresh updates):
+  // noStore();
+  const attempt = async (): Promise<T[]> => {
+    const doc = await withTimeout(getDoc(), 8000, `load doc for "${title}"`);
     const sheet = doc.sheetsByTitle[title];
     if (!sheet) {
       console.error(`[sheets] Tab "${title}" not found.`);
       return [];
     }
-    const rows = await sheet.getRows();
+    const rows = await withTimeout(sheet.getRows(), 8000, `getRows "${title}"`);
     const out: T[] = [];
     rows.forEach((row, i) => {
       const raw: Record<string, unknown> = {};
@@ -53,21 +60,31 @@ async function loadTab<T>(
         );
     });
     return out;
+  };
+
+  try {
+    return await attempt();
   } catch (err) {
-    console.error(`[sheets] Failed to load "${title}":`, err);
-    return [];
+    console.warn(`[sheets] "${title}" attempt 1 failed, retrying once:`, err);
+    try {
+      return await attempt();
+    } catch (err2) {
+      console.error(`[sheets] "${title}" failed after retry:`, err2);
+      return [];
+    }
   }
 }
 
-const optionalNum = z.preprocess(
-  (v) => (v === "" || v == null ? undefined : v),
-  z.coerce.number().int().nonnegative().optional(),
-);
 
 /* ----------------------------- activities ----------------------------- */
 export const ACTIVITY_CATEGORY_ORDER = [
   "Survey", "Trainings", "HEC Visits", "Meetings", "Rankings", "Other Activities",
 ] as const;
+
+const optionalNum = z.preprocess(
+  (v) => (v === "" || v == null ? undefined : v),
+  z.coerce.number().int().nonnegative().optional(),
+);
 
 const activitySchema = z.object({
   category: z.string().trim().min(1, "category is required"),

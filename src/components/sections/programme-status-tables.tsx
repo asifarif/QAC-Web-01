@@ -45,7 +45,7 @@ function councilBadgeClass(body: string) {
   if (council.includes("NBEAC"))
     return "bg-amber-50 text-amber-700 ring-amber-600/25";
 
-  return "bg-muted text-muted-foreground ring-foreground/10";
+  return "bg-slate-100 text-slate-700 ring-slate-400/30";
 }
 
 function BodyBadge({ body }: { body?: string }) {

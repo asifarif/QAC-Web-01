@@ -10,7 +10,7 @@ export type NavItem = {
 export const navItems: NavItem[] = [
   { title: "Home", href: "/" },
   { title: "About QA&C", href: "/about" },
-  { title: "Self-Assessment & Accreditation", href: "/self-assessment" },
+  { title: "Assessment & Accreditation", href: "/self-assessment" },
   { title: "Activities", href: "/activities" },
   { title: "Resources", href: "/resources" },
   { title: "Contact", href: "/contact" },

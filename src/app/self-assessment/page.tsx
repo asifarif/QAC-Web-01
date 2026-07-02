@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 
 import { PageHeader } from "@/components/page-header";
 import { SelfAssessmentProcess } from "@/components/sections/self-assessment-process";
@@ -6,7 +7,7 @@ import { ProgrammeStatusTables } from "@/components/sections/programme-status-ta
 import { getProgrammes, type Programme } from "@/lib/sheets";
 
 export const metadata: Metadata = {
-  title: "Self-Assessment & Accreditation",
+  title: "Assessment & Accreditation",
 };
 
 export const runtime = "nodejs";
@@ -67,7 +68,7 @@ export default async function SelfAssessmentPage() {
     <>
       <PageHeader
         eyebrow="Quality"
-        title="Self-Assessment & Accreditation"
+        title="Assessment & Accreditation"
         subtitle="Assuring quality at programme level through accreditation and the HEC self-assessment cycle."
       />
 
@@ -78,6 +79,15 @@ export default async function SelfAssessmentPage() {
 
         <div className="mt-16 max-w-3xl">
           <SelfAssessmentProcess />
+        </div>
+
+        <div className="mt-6 max-w-3xl">
+          <Link
+            href="/self-assessment/ripe"
+            className="inline-flex items-center gap-1.5 text-sm font-semibold text-blue transition-colors hover:text-navy"
+          >
+            Read about RIPE <span aria-hidden="true">→</span>
+          </Link>
         </div>
 
         <div className="mt-16">

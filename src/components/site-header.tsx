@@ -95,16 +95,9 @@ export function SiteHeader() {
                         <NavigationMenuLink
                           asChild
                           active={pathname === item.href}
-                          className="flex-col items-start gap-0.5 rounded-md p-3 data-active:bg-muted"
+                          className="rounded-md px-3 py-2 text-sm font-semibold text-navy hover:bg-blue/10 hover:text-navy focus:bg-blue/10 focus:text-navy data-active:bg-blue data-active:text-white data-active:hover:bg-blue data-active:hover:text-white data-active:focus:bg-blue data-active:focus:text-white"
                         >
-                          <Link href={item.href}>
-                            <span className="text-sm font-semibold text-navy">
-                              {item.title}
-                            </span>
-                            <span className="text-xs text-muted-foreground">
-                              Overview of quality assurance at HITEC University
-                            </span>
-                          </Link>
+                          <Link href={item.href}>{item.title}@HITEC</Link>
                         </NavigationMenuLink>
                       </li>
                       {item.children.map((child) => (
@@ -112,7 +105,7 @@ export function SiteHeader() {
                           <NavigationMenuLink
                             asChild
                             active={isActive(child.href)}
-                            className="rounded-md px-3 py-2 text-sm font-medium text-foreground data-active:bg-blue data-active:text-white data-active:hover:bg-blue data-active:hover:text-white data-active:focus:bg-blue data-active:focus:text-white"
+                            className="rounded-md px-3 py-2 text-sm font-medium text-foreground hover:bg-blue/10 hover:text-navy focus:bg-blue/10 focus:text-navy data-active:bg-blue data-active:text-white data-active:hover:bg-blue data-active:hover:text-white data-active:focus:bg-blue data-active:focus:text-white"
                           >
                             <Link href={child.href}>{child.title}</Link>
                           </NavigationMenuLink>

@@ -11,33 +11,28 @@ export const metadata: Metadata = {
 
 export const runtime = "nodejs";
 
-const INTRO =
-  "Quality at HITEC University is assured on two complementary tracks. " +
-  "Programmes under a discipline-specific council are accredited by that body — " +
-  "the Pakistan Engineering Council (PEC) for engineering, the National Computing " +
-  "Education Accreditation Council (NCEAC) for computing and the National Business " +
-  "Education Accreditation Council (NBEAC) for business — while other programmes " +
-  "are reviewed through the HEC self-assessment (SAR) cycle. RIPE further supports " +
-  "the review of research and intellectual property.";
+const INTRO = 
+"Quality at HITEC University is assured at two levels. At the programme level, programmes in fields served by a professional accreditation council are accredited by that council, while others are assured through internal self-assessment, with each programme preparing a Self-Assessment Report (SAR) and undergoing programme review (PREE) in line with the Higher Education Commission's framework. At the institutional level, the University reviews its overall performance through RIPE (Review of Institutional Performance and Enhancement). Together these keep quality under continuous review, from individual programmes up to the institution as a whole."
+;
 
 const sections = [
   {
     title: "Assessment & Accreditation",
     href: "/quality-assurance/assessment-accreditation",
     description:
-      "Programme accreditation status across the PEC, NCEAC and NBEAC councils.",
+      "Accreditation status of programmes reviewed by their relevant professional councils.",
   },
   {
     title: "Self-Assessment (SAR)",
     href: "/quality-assurance/sar",
     description:
-      "The HEC self-assessment cycle and review process for non-council programmes.",
+      "The internal self-assessment cycle through which programmes are reviewed and improved.",
   },
   {
     title: "RIPE",
     href: "/quality-assurance/ripe",
     description:
-      "Review of research and intellectual property supporting quality assurance.",
+      "Institutional self-review of the University's overall performance against national standards.",
   },
 ];
 
@@ -46,8 +41,8 @@ export default async function QualityAssurancePage() {
     <>
       <PageHeader
         eyebrow="Quality Assurance"
-        title="Quality Assurance"
-        subtitle="How the Directorate assures academic quality across HITEC University."
+        title="Quality Assurance @ HITEC University"
+        subtitle="How the Directorate assures academic quality across the University, from individual programmes to the institution as a whole."
       />
 
       <section className="mx-auto max-w-5xl px-4 py-16 sm:px-6 lg:px-8">

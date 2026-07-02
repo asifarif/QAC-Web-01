@@ -106,8 +106,8 @@ export default async function MembershipsPage() {
         subtitle="National and international networks in which HITEC University participates."
       />
 
-      <section className="mx-auto max-w-6xl px-4 py-16 sm:px-6 lg:px-8">
-        <p className="max-w-3xl text-base leading-relaxed text-muted-foreground sm:text-lg">
+      <section className="site-container py-16">
+        <p className="text-base leading-relaxed text-muted-foreground sm:text-lg">
           {INTRO}
         </p>
 

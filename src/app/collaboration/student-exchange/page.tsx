@@ -25,16 +25,16 @@ export default function StudentExchangePage() {
         subtitle="International exchange opportunities that broaden our students' academic and cultural experience."
       />
 
-      <section className="mx-auto max-w-5xl px-4 py-16 sm:px-6 lg:px-8">
+      <section className="site-container py-16">
         <Reveal>
-          <p className="max-w-3xl text-base leading-relaxed text-muted-foreground sm:text-lg">
+          <p className="text-base leading-relaxed text-muted-foreground sm:text-lg">
             {INTRO}
           </p>
         </Reveal>
 
         {/* How it works */}
         <Reveal delay={0.08}>
-          <div className="mt-14 max-w-3xl">
+          <div className="mt-14">
             <h2 className="font-heading text-2xl font-bold text-navy sm:text-3xl">
               How it works
             </h2>
@@ -111,7 +111,7 @@ export default function StudentExchangePage() {
 
         {/* Closing */}
         <Reveal delay={0.16}>
-          <p className="mt-12 max-w-3xl text-base leading-relaxed text-muted-foreground">
+          <p className="mt-12 text-base leading-relaxed text-muted-foreground">
             We are actively expanding both our exchange partnerships and our
             quality assurance networks — further opportunities will be announced
             here.

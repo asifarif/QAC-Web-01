@@ -25,16 +25,16 @@ export default async function SelfAssessmentSarPage() {
         subtitle="The HEC self-assessment cycle for programmes outside a council's remit."
       />
 
-      <section className="mx-auto max-w-5xl px-4 py-16 sm:px-6 lg:px-8">
-        <p className="max-w-3xl text-base leading-relaxed text-muted-foreground sm:text-lg">
+      <section className="site-container py-16">
+        <p className="text-base leading-relaxed text-muted-foreground sm:text-lg">
           {INTRO}
         </p>
 
-        <div className="mt-16 max-w-3xl">
+        <div className="mt-16">
           <SelfAssessmentProcess />
         </div>
 
-        <div className="mt-10 max-w-3xl">
+        <div className="mt-10">
           <Link
             href="/quality-assurance/assessment-accreditation"
             className="inline-flex items-center gap-1.5 text-sm font-semibold text-blue transition-colors hover:text-navy"

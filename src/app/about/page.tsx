@@ -37,7 +37,7 @@ export default async function AboutPage() {
         subtitle="The Directorate's mandate, quality policy and the people behind it."
       />
 
-      <section className="mx-auto max-w-5xl px-4 py-16 sm:px-6 lg:px-8">
+      <section className="site-container py-16">
         <DirectorMessage photoSrc={directorPhotoSrc} />
 
         <div className="mt-16">

@@ -43,8 +43,8 @@ export default async function CollaborationPage() {
         subtitle="Building linkages and exchange that broaden opportunity for our students and faculty."
       />
 
-      <section className="mx-auto max-w-5xl px-4 py-16 sm:px-6 lg:px-8">
-        <p className="max-w-3xl text-base leading-relaxed text-muted-foreground sm:text-lg">
+      <section className="site-container py-16">
+        <p className="text-base leading-relaxed text-muted-foreground sm:text-lg">
           {INTRO}
         </p>
 

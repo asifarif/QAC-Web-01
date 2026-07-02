@@ -14,7 +14,7 @@ export function StatsBand() {
   return (
     <section className="relative overflow-hidden bg-navy text-white">
       <GridGlow />
-      <div className="relative mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
+      <div className="site-container relative py-16">
         <div className="grid grid-cols-2 gap-8 md:grid-cols-4">
           {stats.map((stat, index) => (
             <Reveal key={stat.label} delay={index * 0.1} className="text-center">

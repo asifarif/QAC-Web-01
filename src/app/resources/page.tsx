@@ -17,7 +17,7 @@ export default function ResourcesPage() {
         title="Resources"
         subtitle="Policies, templates, guidelines and reports for quality assurance."
       />
-      <section className="mx-auto max-w-3xl px-4 py-20 sm:px-6 lg:px-8">
+      <section className="site-container py-20">
         <p className="text-lg text-muted-foreground">
           Coming soon. This page will become a searchable document library for
           quality-assurance resources.

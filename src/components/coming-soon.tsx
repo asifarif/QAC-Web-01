@@ -15,7 +15,7 @@ export function ComingSoon({
   return (
     <>
       <PageHeader eyebrow={eyebrow} title={title} />
-      <section className="mx-auto max-w-3xl px-4 py-20 sm:px-6 lg:px-8">
+      <section className="site-container py-20">
         <p className="text-lg text-muted-foreground">{message}</p>
       </section>
     </>

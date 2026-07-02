@@ -17,7 +17,7 @@ export function GalleryMarquee() {
 
   return (
     <section className="bg-surface">
-      <div className="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8">
+      <div className="site-container py-20">
         <div className="mx-auto max-w-2xl text-center">
           <h2 className="font-heading text-3xl font-bold text-navy sm:text-4xl">
             In Pictures

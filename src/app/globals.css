@@ -162,3 +162,53 @@
     @apply tracking-tight;
   }
 }
+
+/* ------------------------------ Gallery marquee ------------------------------ */
+/* The track holds the image list twice; translating it -50% scrolls exactly one
+   copy, so the loop is seamless. Duration is set inline via --marquee-duration. */
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.marquee-group {
+  overflow: hidden;
+  -webkit-mask-image: linear-gradient(
+    to right,
+    transparent,
+    #000 8%,
+    #000 92%,
+    transparent
+  );
+  mask-image: linear-gradient(
+    to right,
+    transparent,
+    #000 8%,
+    #000 92%,
+    transparent
+  );
+}
+
+.marquee-track {
+  animation: marquee var(--marquee-duration, 40s) linear infinite;
+  will-change: transform;
+}
+
+.marquee-group:hover .marquee-track {
+  animation-play-state: paused;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .marquee-track {
+    animation: none;
+    transform: none;
+  }
+  /* Freeze into a static, manually scrollable strip. */
+  .marquee-group {
+    overflow-x: auto;
+  }
+}

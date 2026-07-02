@@ -1,6 +1,5 @@
 import "server-only";
 import { cache } from "react";
-import { unstable_noStore as noStore } from "next/cache";
 import { GoogleSpreadsheet } from "google-spreadsheet";
 import { JWT } from "google-auth-library";
 import { z } from "zod";
@@ -219,4 +218,27 @@ export function splitProgrammes(items: Programme[]): ProgrammeGroups {
   };
   for (const p of items) groups[programmeTrack(p)].push(p);
   return groups;
+}
+/* -------------------------- team & liaison --------------------------- */
+const teamSchema = z.object({
+  name: z.string().trim().min(1, "name is required"),
+  designation: z.string().trim().optional().default(""),
+  order: optionalNum,
+});
+export type TeamMember = z.infer<typeof teamSchema>;
+export async function getTeam(): Promise<TeamMember[]> {
+  const rows = await loadTab("team", teamSchema, ["name", "designation", "order"]);
+  return rows.sort((a, b) => (a.order ?? 1e9) - (b.order ?? 1e9));
+}
+
+const liaisonSchema = z.object({
+  name: z.string().trim().min(1, "name is required"),
+  designation: z.string().trim().optional().default(""),
+  department: z.string().trim().optional().default(""),
+  order: optionalNum,
+});
+export type LiaisonOfficer = z.infer<typeof liaisonSchema>;
+export async function getLiaisonOfficers(): Promise<LiaisonOfficer[]> {
+  const rows = await loadTab("Liaison", liaisonSchema, ["name", "designation", "department", "order"]);
+  return rows.sort((a, b) => (a.order ?? 1e9) - (b.order ?? 1e9));
 }

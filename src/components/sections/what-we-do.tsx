@@ -1,3 +1,4 @@
+import Link from "next/link";
 import {
   Award,
   GraduationCap,
@@ -15,6 +16,7 @@ type Feature = {
   icon: LucideIcon;
   title: string;
   description: string;
+  href: string;
 };
 
 const features: Feature[] = [
@@ -23,35 +25,41 @@ const features: Feature[] = [
     title: "Quality Assurance & Self-Assessment",
     description:
       "Quality mechanisms across the University and self-assessment of programmes, per HEC guidelines.",
+    href: "/quality-assurance",
   },
   {
     icon: MessagesSquare,
     title: "Surveys & Stakeholder Feedback",
     description:
       "Feedback from students, faculty, alumni, employers and offices, analysed and acted upon.",
+    href: "/surveys",
   },
   {
     icon: Award,
     title: "Accreditation & Compliance",
     description: "Support for accreditation and compliance.",
+    href: "/quality-assurance/assessment-accreditation",
   },
   {
     icon: LineChart,
     title: "University Rankings",
     description:
       "Leading HITEC's participation in various rankings through data acquisition and submission.",
+    href: "/rankings",
   },
   {
     icon: Users,
     title: "Collaboration & Student Exchange",
     description:
       "Linkages with partner institutions and student exchange opportunities.",
+    href: "/collaboration",
   },
   {
     icon: GraduationCap,
     title: "Capacity Building & Training",
     description:
       "Workshops on quality assurance, SAR development, ethics and emerging tools.",
+    href: "/training",
   },
 ];
 
@@ -64,8 +72,8 @@ export function WhatWeDo() {
             What we do
           </h2>
           <p className="mt-4 text-base text-muted-foreground sm:text-lg">
-            Focus areas through which the Directorate safeguards standards
-            and builds recognition for HITEC University.
+            Focus areas through which the Directorate safeguards standards and
+            builds recognition for HITEC University.
           </p>
         </Reveal>
 
@@ -74,17 +82,22 @@ export function WhatWeDo() {
             const Icon = feature.icon;
             return (
               <Reveal key={feature.title} delay={(index % 3) * 0.08}>
-                <Card className="h-full gap-0 p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:ring-foreground/20">
-                  <span className="mb-5 inline-flex size-12 items-center justify-center rounded-xl bg-blue/10 text-blue">
-                    <Icon className="size-6" />
-                  </span>
-                  <CardTitle className="text-lg text-navy">
-                    {feature.title}
-                  </CardTitle>
-                  <CardDescription className="mt-2 leading-relaxed">
-                    {feature.description}
-                  </CardDescription>
-                </Card>
+                <Link
+                  href={feature.href}
+                  className="group block h-full rounded-xl transition-transform focus-visible:ring-2 focus-visible:ring-blue focus-visible:ring-offset-2 focus-visible:outline-none"
+                >
+                  <Card className="h-full gap-0 p-6 transition-all duration-300 group-hover:-translate-y-1 group-hover:shadow-lg group-hover:ring-foreground/20">
+                    <span className="mb-5 inline-flex size-12 items-center justify-center rounded-xl bg-blue/10 text-blue transition-colors group-hover:bg-blue group-hover:text-white">
+                      <Icon className="size-6" />
+                    </span>
+                    <CardTitle className="text-lg text-navy">
+                      {feature.title}
+                    </CardTitle>
+                    <CardDescription className="mt-2 leading-relaxed">
+                      {feature.description}
+                    </CardDescription>
+                  </Card>
+                </Link>
               </Reveal>
             );
           })}

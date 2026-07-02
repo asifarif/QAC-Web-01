@@ -1,24 +1,48 @@
+import { existsSync } from "node:fs";
+import path from "node:path";
 import type { Metadata } from "next";
 
 import { PageHeader } from "@/components/page-header";
+import { DirectorMessage } from "@/components/sections/director-message";
+import { AboutAccordion } from "@/components/sections/about-accordion";
+import { getTeam, getLiaisonOfficers } from "@/lib/sheets";
 
 export const metadata: Metadata = {
   title: "About QA&C",
 };
 
-export default function AboutPage() {
+export const runtime = "nodejs";
+// ISR: team & liaison lists refresh from the sheet at most every 5 minutes.
+export const revalidate = 300;
+
+export default async function AboutPage() {
+  const [team, liaison] = await Promise.all([
+    getTeam(),
+    getLiaisonOfficers(),
+  ]);
+
+  // Director photo lives in /public; encode the space in the filename for the URL.
+  const DIRECTOR_PHOTO_FILE = "Dr. Asif-PIC2.jpg";
+  const directorPhotoSrc = existsSync(
+    path.join(process.cwd(), "public", DIRECTOR_PHOTO_FILE),
+  )
+    ? `/${encodeURIComponent(DIRECTOR_PHOTO_FILE)}`
+    : null;
+
   return (
     <>
       <PageHeader
         eyebrow="About"
         title="About QA&C"
-        subtitle="Who we are and what the Directorate does at HITEC University."
+        subtitle="The Directorate's mandate, quality policy and the people behind it."
       />
-      <section className="mx-auto max-w-3xl px-4 py-20 sm:px-6 lg:px-8">
-        <p className="text-lg text-muted-foreground">
-          Coming soon. This page will introduce the Directorate&apos;s mandate,
-          team and objectives.
-        </p>
+
+      <section className="mx-auto max-w-5xl px-4 py-16 sm:px-6 lg:px-8">
+        <DirectorMessage photoSrc={directorPhotoSrc} />
+
+        <div className="mt-16">
+          <AboutAccordion team={team} liaison={liaison} />
+        </div>
       </section>
     </>
   );

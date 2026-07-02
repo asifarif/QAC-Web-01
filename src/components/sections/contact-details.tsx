@@ -39,6 +39,14 @@ export function ContactDetails() {
             Get in touch
           </h2>
           <div className="mt-8 space-y-6">
+            <DetailRow icon={User} label="Director">
+              <p className="font-medium text-foreground">
+                {contact.director.name}
+              </p>
+              <p className="mt-0.5 text-muted-foreground">
+                {contact.director.title}
+              </p>
+            </DetailRow>
             <DetailRow icon={MapPin} label="Office">
               <p className="font-medium text-foreground">
                 {contact.office.name}
@@ -64,15 +72,6 @@ export function ContactDetails() {
               >
                 {contact.email}
               </a>
-            </DetailRow>
-
-            <DetailRow icon={User} label="Director">
-              <p className="font-medium text-foreground">
-                {contact.director.name}
-              </p>
-              <p className="mt-0.5 text-muted-foreground">
-                {contact.director.title}
-              </p>
             </DetailRow>
           </div>
         </div>

@@ -7,29 +7,27 @@
 /*
   QA&C — HITEC University design tokens.
 
-  Brand colours were refined against the official HITEC logo
-  (public/hitec-logo.svg), whose fills are:
-    #172058 navy   #0b97dd blue   #69bbdf light-blue
-    #f8f213 yellow #5d587a mauve  #f6f7f2 off-white
+  Brand palette derived from the official university colour #60060F (maroon):
+    --brand       #60060F  primary surface (header, hero bands, footer, table bars)
+    --brand-dark  #45040B  hovers / gradients
+    --brand-light #8A2A33  links, interactive text, borders/secondary
+    --brand-tint  #F7EDEE  light section backgrounds, table header tints
+    --gold        #FDB714  accent / primary CTA (dark text on gold)
 
-  Refinements vs. the original brief (see README "Brand colours"):
-    --navy  #0A2C4D -> #172058  (adopted the logo's exact deep indigo-navy)
-    --blue  #15538C -> #0E6FB8  (logo azure #0b97dd, darkened to meet WCAG AA
-                                 contrast as link text on white)
-    --gold  #E0A422             (retained: the logo accent #f8f213 is a neon
-                                 lemon that reads garish as a CTA fill, so we
-                                 keep the refined academic gold)
+  Council badge colours (PEC blue, NCEAC emerald, NBEAC amber) are semantic,
+  not brand, and stay hardcoded where used.
 */
 
 :root {
   /* Raw brand palette */
-  --navy: #172058;
-  --brown: #60060f;
-  --blue: #0e6fb8;
-  --gold: #e0a422;
+  --brand: #60060f;
+  --brand-dark: #45040b;
+  --brand-light: #8a2a33;
+  --brand-tint: #f7edee;
+  --gold: #fdb714;
   --ink: #0f172a;
   --muted: #5b6b7b;
-  --bg: #f4f7fa;
+  --bg: var(--brand-tint);
   --card: #ffffff;
 
   /* shadcn semantic tokens mapped onto the brand (light theme) */
@@ -39,30 +37,30 @@
   --card-foreground: var(--ink);
   --popover: var(--card);
   --popover-foreground: var(--ink);
-  --primary: var(--navy);
+  --primary: var(--brand);
   --primary-foreground: #ffffff;
-  --secondary: #e9eff6;
-  --secondary-foreground: var(--navy);
+  --secondary: var(--brand-tint);
+  --secondary-foreground: var(--brand);
   --muted-foreground: var(--muted);
-  --accent: #eaf2fb;
-  --accent-foreground: var(--navy);
+  --accent: var(--brand-tint);
+  --accent-foreground: var(--brand);
   --destructive: oklch(0.577 0.245 27.325);
-  --border: #e2e8f0;
-  --input: #e2e8f0;
-  --ring: var(--blue);
-  --chart-1: var(--navy);
-  --chart-2: var(--blue);
-  --chart-3: #69bbdf;
+  --border: #e8e0e1;
+  --input: #e8e0e1;
+  --ring: var(--brand-light);
+  --chart-1: var(--brand);
+  --chart-2: var(--brand-light);
+  --chart-3: #c98a90;
   --chart-4: var(--gold);
   --chart-5: var(--muted);
   --sidebar: var(--card);
   --sidebar-foreground: var(--ink);
-  --sidebar-primary: var(--navy);
+  --sidebar-primary: var(--brand);
   --sidebar-primary-foreground: #ffffff;
-  --sidebar-accent: #eaf2fb;
-  --sidebar-accent-foreground: var(--navy);
-  --sidebar-border: #e2e8f0;
-  --sidebar-ring: var(--blue);
+  --sidebar-accent: var(--brand-tint);
+  --sidebar-accent-foreground: var(--brand);
+  --sidebar-border: #e8e0e1;
+  --sidebar-ring: var(--brand-light);
 }
 
 .dark {
@@ -121,9 +119,11 @@
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-ring: var(--sidebar-ring);
 
-  /* Brand colour utilities -> bg-navy, text-blue, bg-gold, bg-surface, ... */
-  --color-navy: var(--navy);
-  --color-blue: var(--blue);
+  /* Brand colour utilities -> bg-brand, text-brand-light, bg-gold, bg-surface */
+  --color-brand: var(--brand);
+  --color-brand-dark: var(--brand-dark);
+  --color-brand-light: var(--brand-light);
+  --color-brand-tint: var(--brand-tint);
   --color-gold: var(--gold);
   --color-ink: var(--ink);
   --color-surface: var(--bg);

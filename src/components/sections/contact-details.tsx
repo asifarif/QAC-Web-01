@@ -14,7 +14,7 @@ function DetailRow({
 }) {
   return (
     <div className="flex gap-4">
-      <span className="mt-0.5 flex size-10 shrink-0 items-center justify-center rounded-lg bg-blue/10 text-blue">
+      <span className="mt-0.5 flex size-10 shrink-0 items-center justify-center rounded-lg bg-brand-light/10 text-brand-light">
         <Icon className="size-5" />
       </span>
       <div>
@@ -35,7 +35,7 @@ export function ContactDetails() {
       <div className="grid overflow-hidden rounded-2xl ring-1 ring-foreground/10 md:grid-cols-2">
         {/* Details */}
         <div className="bg-card p-8 sm:p-10">
-          <h2 className="font-heading text-2xl font-bold text-navy">
+          <h2 className="font-heading text-2xl font-bold text-brand">
             Get in touch
           </h2>
           <div className="mt-8 space-y-6">
@@ -59,7 +59,7 @@ export function ContactDetails() {
             <DetailRow icon={Phone} label="Phone">
               <a
                 href={contact.phone.href}
-                className="text-blue transition-colors hover:text-navy"
+                className="text-brand-light transition-colors hover:text-brand"
               >
                 {contact.phone.display}
               </a>
@@ -68,7 +68,7 @@ export function ContactDetails() {
             <DetailRow icon={Mail} label="Email">
               <a
                 href={`mailto:${contact.email}`}
-                className="text-blue transition-colors hover:text-navy"
+                className="text-brand-light transition-colors hover:text-brand"
               >
                 {contact.email}
               </a>
@@ -77,7 +77,7 @@ export function ContactDetails() {
         </div>
 
         {/* Map */}
-        <div className="min-h-[320px] bg-navy">
+        <div className="min-h-[320px] bg-brand">
           <iframe
             src={contact.map.embedSrc}
             title={`Map — ${contact.map.label}`}

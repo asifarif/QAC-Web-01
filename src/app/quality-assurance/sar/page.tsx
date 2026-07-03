@@ -37,7 +37,7 @@ export default async function SelfAssessmentSarPage() {
         <div className="mt-10">
           <Link
             href="/quality-assurance/assessment-accreditation"
-            className="inline-flex items-center gap-1.5 text-sm font-semibold text-blue transition-colors hover:text-navy"
+            className="inline-flex items-center gap-1.5 text-sm font-semibold text-brand-light transition-colors hover:text-brand"
           >
             View programme accreditation &amp; status tables{" "}
             <span aria-hidden="true">→</span>

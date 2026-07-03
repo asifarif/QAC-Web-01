@@ -29,7 +29,7 @@ export function ActivityCalendar({ groups }: { groups: ActivityGroup[] }) {
         <Reveal key={group.category} delay={index * 0.08}>
           <div className="overflow-hidden rounded-xl ring-1 ring-foreground/10">
             {/* Category heading bar */}
-            <div className="flex items-center justify-between gap-3 bg-navy px-5 py-3">
+            <div className="flex items-center justify-between gap-3 bg-brand px-5 py-3">
               <h2 className="font-heading text-base font-semibold text-white sm:text-lg">
                 {group.category}
               </h2>
@@ -42,9 +42,9 @@ export function ActivityCalendar({ groups }: { groups: ActivityGroup[] }) {
             <Table>
               <TableHeader>
                 <TableRow className="border-b bg-surface hover:bg-surface">
-                  <TableHead className="w-12 px-4 text-navy">#</TableHead>
-                  <TableHead className="px-4 text-navy">Description</TableHead>
-                  <TableHead className="w-40 px-4 text-navy sm:w-56">
+                  <TableHead className="w-12 px-4 text-brand">#</TableHead>
+                  <TableHead className="px-4 text-brand">Description</TableHead>
+                  <TableHead className="w-40 px-4 text-brand sm:w-56">
                     Scheduled Date
                   </TableHead>
                 </TableRow>

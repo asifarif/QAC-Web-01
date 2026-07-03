@@ -59,20 +59,20 @@ function MembershipCard({ member }: { member: Membership }) {
             className="object-contain p-3 grayscale transition duration-300 group-hover:grayscale-0"
           />
         ) : (
-          <div className="flex h-full items-center justify-center px-3 text-center text-sm font-semibold text-navy">
+          <div className="flex h-full items-center justify-center px-3 text-center text-sm font-semibold text-brand">
             {member.name}
           </div>
         )}
       </div>
 
-      <h3 className="mt-4 font-semibold text-navy">{member.name}</h3>
+      <h3 className="mt-4 font-semibold text-brand">{member.name}</h3>
       {member.description ? (
         <p className="mt-1 flex-1 text-sm leading-relaxed text-muted-foreground">
           {member.description}
         </p>
       ) : null}
       {member.url ? (
-        <span className="mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-blue">
+        <span className="mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-brand-light">
           Visit
           <ArrowUpRight className="size-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
         </span>
@@ -122,7 +122,7 @@ export default async function MembershipsPage() {
             {groups.map((group, groupIndex) => (
               <Reveal key={group.category} delay={groupIndex * 0.05}>
                 <div>
-                  <h2 className="font-heading text-xl font-bold text-navy sm:text-2xl">
+                  <h2 className="font-heading text-xl font-bold text-brand sm:text-2xl">
                     {group.category}
                   </h2>
                   <div className="mt-6 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">

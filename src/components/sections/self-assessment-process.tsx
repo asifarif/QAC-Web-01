@@ -36,7 +36,7 @@ const steps = [
 export function SelfAssessmentProcess() {
   return (
     <div>
-      <h2 className="font-heading text-2xl font-bold text-navy sm:text-3xl">
+      <h2 className="font-heading text-2xl font-bold text-brand sm:text-3xl">
         The Self-Assessment Process
       </h2>
       <div className="mt-8">
@@ -54,11 +54,11 @@ export function SelfAssessmentProcess() {
                     className="absolute top-11 left-5 h-[calc(100%-1.75rem)] w-px bg-border"
                   />
                 ) : null}
-                <span className="z-10 flex size-10 shrink-0 items-center justify-center rounded-full bg-navy font-heading text-sm font-semibold text-white ring-4 ring-background">
+                <span className="z-10 flex size-10 shrink-0 items-center justify-center rounded-full bg-brand font-heading text-sm font-semibold text-white ring-4 ring-background">
                   {index + 1}
                 </span>
                 <div className="pt-1.5">
-                  <h3 className="font-heading text-base font-semibold text-navy sm:text-lg">
+                  <h3 className="font-heading text-base font-semibold text-brand sm:text-lg">
                     {step.title}
                   </h3>
                   <p className="mt-1 text-sm leading-relaxed text-muted-foreground sm:text-base">

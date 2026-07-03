@@ -71,7 +71,7 @@ export function DirectorMessage({
         </div>
 
         <div className="md:col-span-2">
-          <h2 className="font-heading text-2xl font-bold text-navy sm:text-3xl">
+          <h2 className="font-heading text-2xl font-bold text-brand sm:text-3xl">
             Director&apos;s Message
           </h2>
           <div className="mt-4 space-y-4 text-base leading-relaxed text-muted-foreground">
@@ -80,7 +80,7 @@ export function DirectorMessage({
             ))}
           </div>
           <div className="mt-6 border-t border-border pt-4">
-            <p className="font-heading font-semibold text-navy">
+            <p className="font-heading font-semibold text-brand">
               {displayName}
             </p>
             <p className="text-sm text-muted-foreground">{displayTitle}</p>

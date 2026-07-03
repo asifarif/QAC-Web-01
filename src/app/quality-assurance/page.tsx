@@ -57,13 +57,13 @@ export default async function QualityAssurancePage() {
                 href={section.href}
                 className="group flex h-full flex-col rounded-xl bg-card p-6 ring-1 ring-foreground/10 transition-all hover:-translate-y-1 hover:shadow-lg hover:ring-foreground/20"
               >
-                <h2 className="font-heading text-lg font-semibold text-navy">
+                <h2 className="font-heading text-lg font-semibold text-brand">
                   {section.title}
                 </h2>
                 <p className="mt-2 flex-1 text-sm leading-relaxed text-muted-foreground">
                   {section.description}
                 </p>
-                <span className="mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-blue">
+                <span className="mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-brand-light">
                   Learn more
                   <ArrowRight className="size-4 transition-transform group-hover:translate-x-0.5" />
                 </span>

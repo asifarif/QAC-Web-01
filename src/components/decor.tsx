@@ -1,5 +1,5 @@
 /**
- * Decorative layer for navy sections: a faint grid that fades at the edges
+ * Decorative layer for brand sections: a faint grid that fades at the edges
  * plus two soft colour glows. Purely presentational and hidden from a11y.
  */
 export function GridGlow() {
@@ -15,7 +15,7 @@ export function GridGlow() {
       />
       <div
         aria-hidden
-        className="pointer-events-none absolute -bottom-32 -left-24 h-96 w-96 rounded-full bg-blue/30 blur-3xl"
+        className="pointer-events-none absolute -bottom-32 -left-24 h-96 w-96 rounded-full bg-brand-light/30 blur-3xl"
       />
     </>
   );

@@ -39,7 +39,8 @@ function valueOrDash(value?: string) {
 function councilBadgeClass(body: string) {
   const council = body.trim().toUpperCase();
 
-  if (council.includes("PEC")) return "bg-blue/10 text-blue ring-blue/25";
+  // Council colours are semantic (not brand): PEC stays blue.
+  if (council.includes("PEC")) return "bg-sky-50 text-sky-700 ring-sky-600/25";
   if (council.includes("NCEAC"))
     return "bg-emerald-50 text-emerald-700 ring-emerald-600/25";
   if (council.includes("NBEAC"))
@@ -83,7 +84,7 @@ function ProgrammeTable({
   return (
     <Reveal delay={delay}>
       <section className="overflow-hidden rounded-lg bg-card ring-1 ring-foreground/10">
-        <div className="flex flex-wrap items-center justify-between gap-3 bg-navy px-5 py-3">
+        <div className="flex flex-wrap items-center justify-between gap-3 bg-brand px-5 py-3">
           <h3 className="font-heading text-base font-semibold text-white sm:text-lg">
             {title}
           </h3>
@@ -98,7 +99,7 @@ function ProgrammeTable({
               {columns.map((column) => (
                 <TableHead
                   key={column.label}
-                  className={cn("px-4 text-navy", column.className)}
+                  className={cn("px-4 text-brand", column.className)}
                 >
                   {column.label}
                 </TableHead>

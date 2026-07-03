@@ -71,7 +71,7 @@ export function SiteHeader() {
   );
 
   return (
-    <header className="sticky top-0 z-50 border-b border-white/10 bg-navy text-white">
+    <header className="sticky top-0 z-50 border-b border-white/10 bg-brand text-white">
       <div className="mx-auto w-full max-w-6xl px-4 sm:px-6 lg:px-8 flex h-16 items-center justify-between gap-4">
         <Brand />
 
@@ -97,7 +97,7 @@ export function SiteHeader() {
                         <NavigationMenuLink
                           asChild
                           active={pathname === item.href}
-                          className="rounded-md px-3 py-2 text-sm font-semibold text-navy hover:bg-blue/10 hover:text-navy focus:bg-blue/10 focus:text-navy data-active:bg-blue data-active:text-white data-active:hover:bg-blue data-active:hover:text-white data-active:focus:bg-blue data-active:focus:text-white"
+                          className="rounded-md px-3 py-2 text-sm font-semibold text-brand hover:bg-brand-light/10 hover:text-brand focus:bg-brand-light/10 focus:text-brand data-active:bg-brand-light data-active:text-white data-active:hover:bg-brand-light data-active:hover:text-white data-active:focus:bg-brand-light data-active:focus:text-white"
                         >
                           <Link href={item.href}>{item.title}@HITEC</Link>
                         </NavigationMenuLink>
@@ -107,7 +107,7 @@ export function SiteHeader() {
                           <NavigationMenuLink
                             asChild
                             active={isActive(child.href)}
-                            className="rounded-md px-3 py-2 text-sm font-medium text-foreground hover:bg-blue/10 hover:text-navy focus:bg-blue/10 focus:text-navy data-active:bg-blue data-active:text-white data-active:hover:bg-blue data-active:hover:text-white data-active:focus:bg-blue data-active:focus:text-white"
+                            className="rounded-md px-3 py-2 text-sm font-medium text-foreground hover:bg-brand-light/10 hover:text-brand focus:bg-brand-light/10 focus:text-brand data-active:bg-brand-light data-active:text-white data-active:hover:bg-brand-light data-active:hover:text-white data-active:focus:bg-brand-light data-active:focus:text-white"
                           >
                             <Link href={child.href}>{child.title}</Link>
                           </NavigationMenuLink>
@@ -146,7 +146,7 @@ export function SiteHeader() {
           <SheetContent
             side="right"
             showCloseButton={false}
-            className="border-white/10 bg-navy text-white"
+            className="border-white/10 bg-brand text-white"
           >
             <SheetHeader className="flex-row items-center justify-between">
               <SheetTitle className="text-white">Menu</SheetTitle>

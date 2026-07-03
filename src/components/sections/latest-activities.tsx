@@ -30,7 +30,7 @@ export function LatestActivities() {
     <section className="bg-card">
       <div className="mx-auto w-full max-w-6xl px-4 sm:px-6 lg:px-8 py-20">
         <Reveal>
-          <h2 className="font-heading text-3xl font-bold text-navy sm:text-4xl">
+          <h2 className="font-heading text-3xl font-bold text-brand sm:text-4xl">
             Latest activities
           </h2>
           <p className="mt-4 text-base text-pretty text-muted-foreground sm:text-lg">
@@ -43,12 +43,12 @@ export function LatestActivities() {
             <Reveal key={activity.title} delay={index * 0.1}>
               <Card className="group h-full gap-0 p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:ring-foreground/20">
                 <div className="flex items-center justify-between">
-                  <Badge variant="secondary" className="bg-blue/10 text-blue">
+                  <Badge variant="secondary" className="bg-brand-light/10 text-brand-light">
                     {activity.category}
                   </Badge>
-                  <ArrowUpRight className="size-4 text-muted-foreground transition-colors group-hover:text-blue" />
+                  <ArrowUpRight className="size-4 text-muted-foreground transition-colors group-hover:text-brand-light" />
                 </div>
-                <CardTitle className="mt-4 text-lg leading-snug text-navy">
+                <CardTitle className="mt-4 text-lg leading-snug text-brand">
                   {activity.title}
                 </CardTitle>
                 <CardDescription className="mt-3 flex items-center gap-1.5">

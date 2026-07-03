@@ -35,12 +35,12 @@ export default function StudentExchangePage() {
         {/* How it works */}
         <Reveal delay={0.08}>
           <div className="mt-14">
-            <h2 className="font-heading text-2xl font-bold text-navy sm:text-3xl">
+            <h2 className="font-heading text-2xl font-bold text-brand sm:text-3xl">
               How it works
             </h2>
             <p className="mt-4 text-base leading-relaxed text-pretty text-muted-foreground">
               Student exchange is facilitated through the{" "}
-              <strong className="font-semibold text-navy">
+              <strong className="font-semibold text-brand">
                 Asia Technological University Network (ATU-Net)
               </strong>
               , a regional network connecting technological universities across
@@ -53,7 +53,7 @@ export default function StudentExchangePage() {
         {/* Partners */}
         <Reveal delay={0.12}>
           <div className="mt-10">
-            <h3 className="font-heading text-lg font-semibold text-navy">
+            <h3 className="font-heading text-lg font-semibold text-brand">
               Partners
             </h3>
             <div className="mt-6 grid gap-6 md:grid-cols-2">
@@ -68,7 +68,7 @@ export default function StudentExchangePage() {
                     className="object-contain object-left p-1"
                   />
                 </div>
-                <h4 className="mt-4 font-semibold text-navy">
+                <h4 className="mt-4 font-semibold text-brand">
                   Asia Technological University Network (ATU-Net)
                 </h4>
                 <p className="mt-1 flex-1 text-sm leading-relaxed text-muted-foreground">
@@ -79,7 +79,7 @@ export default function StudentExchangePage() {
                   href="https://www2.utm.my/atunet/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-blue transition-colors hover:text-navy"
+                  className="mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-brand-light transition-colors hover:text-brand"
                 >
                   Visit ATU-Net
                   <ArrowUpRight className="size-4" />
@@ -97,7 +97,7 @@ export default function StudentExchangePage() {
                     className="object-contain object-left p-1"
                   />
                 </div>
-                <h4 className="mt-4 font-semibold text-navy">
+                <h4 className="mt-4 font-semibold text-brand">
                   Universiti Teknologi Malaysia (UTM)
                 </h4>
                 <p className="mt-1 flex-1 text-sm leading-relaxed text-muted-foreground">

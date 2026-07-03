@@ -63,7 +63,7 @@ export default async function UsefulLinksPage() {
               {groups.map((group, groupIndex) => (
                 <Reveal key={group.category} delay={groupIndex * 0.05}>
                   <div>
-                    <h2 className="font-heading text-xl font-bold text-navy sm:text-2xl">
+                    <h2 className="font-heading text-xl font-bold text-brand sm:text-2xl">
                       {group.category}
                     </h2>
                     <div className="mt-5 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
@@ -76,10 +76,10 @@ export default async function UsefulLinksPage() {
                           className="group flex h-full flex-col rounded-xl bg-card p-5 ring-1 ring-foreground/10 transition-all hover:-translate-y-0.5 hover:shadow-md hover:ring-foreground/20"
                         >
                           <span className="flex items-start justify-between gap-3">
-                            <span className="font-semibold text-navy transition-colors group-hover:text-blue">
+                            <span className="font-semibold text-brand transition-colors group-hover:text-brand-light">
                               {link.title}
                             </span>
-                            <ExternalLink className="mt-1 size-4 shrink-0 text-muted-foreground transition-colors group-hover:text-blue" />
+                            <ExternalLink className="mt-1 size-4 shrink-0 text-muted-foreground transition-colors group-hover:text-brand-light" />
                           </span>
                           {link.description ? (
                             <span className="mt-1.5 text-sm leading-relaxed text-muted-foreground">

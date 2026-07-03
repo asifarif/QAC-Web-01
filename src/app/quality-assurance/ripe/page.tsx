@@ -126,8 +126,8 @@ function FlowArrow() {
       aria-hidden="true"
       className="flex items-center justify-center py-1 lg:px-1 lg:py-0"
     >
-      <ArrowDown className="size-6 text-blue lg:hidden" />
-      <ArrowRight className="hidden size-6 text-blue lg:block" />
+      <ArrowDown className="size-6 text-brand-light lg:hidden" />
+      <ArrowRight className="hidden size-6 text-brand-light lg:block" />
     </div>
   );
 }
@@ -135,7 +135,7 @@ function FlowArrow() {
 function PhaseColumn({ phase }: { phase: Phase }) {
   return (
     <div className="flex flex-1 flex-col overflow-hidden rounded-xl bg-card ring-1 ring-foreground/10">
-      <div className="bg-navy px-4 py-3">
+      <div className="bg-brand px-4 py-3">
         <p className="text-xs font-semibold tracking-wider text-gold uppercase">
           {phase.label}
         </p>
@@ -171,10 +171,10 @@ export default function RipePage() {
         <Reveal>
           <div className="grid gap-8 lg:grid-cols-3">
             <div className="lg:col-span-2">
-              <h2 className="font-heading text-2xl font-bold text-navy sm:text-3xl">
+              <h2 className="font-heading text-2xl font-bold text-brand sm:text-3xl">
                 What is RIPE?
               </h2>
-              <p className="mt-2 font-heading text-lg font-semibold text-blue">
+              <p className="mt-2 font-heading text-lg font-semibold text-brand-light">
                 Review of Institutional Performance and Enhancement (RIPE for
                 IQA)
               </p>
@@ -190,8 +190,8 @@ export default function RipePage() {
               </div>
             </div>
 
-            <aside className="rounded-xl border-l-4 border-blue bg-blue/5 p-5">
-              <h3 className="font-heading text-sm font-semibold tracking-wider text-navy uppercase">
+            <aside className="rounded-xl border-l-4 border-brand-light bg-brand-light/5 p-5">
+              <h3 className="font-heading text-sm font-semibold tracking-wider text-brand uppercase">
                 Key terms
               </h3>
               <dl className="mt-4 space-y-3 text-sm">
@@ -213,7 +213,7 @@ export default function RipePage() {
       <section className="bg-surface">
         <div className="mx-auto w-full max-w-6xl px-4 sm:px-6 lg:px-8 py-16">
           <Reveal>
-            <h2 className="font-heading text-2xl font-bold text-navy sm:text-3xl">
+            <h2 className="font-heading text-2xl font-bold text-brand sm:text-3xl">
               The RIPE Process
             </h2>
             <p className="mt-4 text-base text-muted-foreground sm:text-lg">
@@ -238,7 +238,7 @@ export default function RipePage() {
       {/* 3. RIPE Standards */}
       <section className="mx-auto w-full max-w-6xl px-4 sm:px-6 lg:px-8 py-16">
         <Reveal>
-          <h2 className="font-heading text-2xl font-bold text-navy sm:text-3xl">
+          <h2 className="font-heading text-2xl font-bold text-brand sm:text-3xl">
             RIPE Standards
           </h2>
           <p className="mt-4 text-base text-muted-foreground sm:text-lg">
@@ -251,13 +251,13 @@ export default function RipePage() {
           {STANDARD_GROUPS.map((group, index) => (
             <Reveal key={group.heading} delay={index * 0.08}>
               <div className="h-full rounded-xl bg-card p-6 ring-1 ring-foreground/10">
-                <h3 className="font-heading text-lg font-semibold text-navy">
+                <h3 className="font-heading text-lg font-semibold text-brand">
                   {group.heading}
                 </h3>
                 <ul className="mt-4 space-y-3">
                   {group.items.map((item) => (
                     <li key={item.n} className="flex gap-3">
-                      <span className="mt-0.5 flex size-6 shrink-0 items-center justify-center rounded-full bg-navy/10 text-xs font-semibold text-navy tabular-nums">
+                      <span className="mt-0.5 flex size-6 shrink-0 items-center justify-center rounded-full bg-brand/10 text-xs font-semibold text-brand tabular-nums">
                         {item.n}
                       </span>
                       <span className="text-sm leading-relaxed text-muted-foreground">
@@ -279,7 +279,7 @@ export default function RipePage() {
             href={HEC_GUIDANCE_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="font-medium text-blue underline-offset-2 hover:underline"
+            className="font-medium text-brand-light underline-offset-2 hover:underline"
           >
             View the HEC guidance document (PDF)
             <span aria-hidden="true"> →</span>

@@ -12,7 +12,7 @@ const stats = [
 
 export function StatsBand() {
   return (
-    <section className="relative overflow-hidden bg-navy text-white">
+    <section className="relative overflow-hidden bg-brand text-white">
       <GridGlow />
       <div className="mx-auto w-full max-w-6xl px-4 sm:px-6 lg:px-8 relative py-16">
         <div className="grid grid-cols-2 gap-8 md:grid-cols-4">

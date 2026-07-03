@@ -49,11 +49,11 @@ function DocumentCard({ doc }: { doc: DocumentItem }) {
   return (
     <div className="flex h-full flex-col rounded-xl bg-card p-5 ring-1 ring-foreground/10 transition-all hover:shadow-md hover:ring-foreground/20">
       <div className="flex items-start gap-3">
-        <span className="mt-0.5 flex size-10 shrink-0 items-center justify-center rounded-lg bg-blue/10 text-blue">
+        <span className="mt-0.5 flex size-10 shrink-0 items-center justify-center rounded-lg bg-brand-light/10 text-brand-light">
           <FileText className="size-5" />
         </span>
         <div className="min-w-0 flex-1">
-          <h3 className="font-semibold text-navy">{doc.title}</h3>
+          <h3 className="font-semibold text-brand">{doc.title}</h3>
           {doc.description ? (
             <p className="mt-1 text-sm leading-relaxed text-muted-foreground">
               {doc.description}
@@ -73,7 +73,7 @@ function DocumentCard({ doc }: { doc: DocumentItem }) {
             asChild
             variant="outline"
             size="sm"
-            className="text-blue hover:text-navy"
+            className="text-brand-light hover:text-brand"
           >
             <a href={doc.file_url} target="_blank" rel="noopener noreferrer">
               Open
@@ -146,7 +146,7 @@ export function ResourceLibrary({ documents }: { documents: DocumentItem[] }) {
                     onChange={(e) => setQuery(e.target.value)}
                     placeholder="Search documents…"
                     aria-label="Search documents by title or description"
-                    className="h-10 w-full rounded-lg border border-input bg-card pr-3 pl-9 text-sm text-foreground placeholder:text-muted-foreground focus-visible:ring-2 focus-visible:ring-blue focus-visible:outline-none"
+                    className="h-10 w-full rounded-lg border border-input bg-card pr-3 pl-9 text-sm text-foreground placeholder:text-muted-foreground focus-visible:ring-2 focus-visible:ring-brand-light focus-visible:outline-none"
                   />
                 </div>
                 <div
@@ -163,10 +163,10 @@ export function ResourceLibrary({ documents }: { documents: DocumentItem[] }) {
                         aria-pressed={active}
                         onClick={() => setSelected(category)}
                         className={cn(
-                          "rounded-full px-4 py-1.5 text-sm font-medium transition-colors focus-visible:ring-2 focus-visible:ring-blue focus-visible:ring-offset-2 focus-visible:outline-none",
+                          "rounded-full px-4 py-1.5 text-sm font-medium transition-colors focus-visible:ring-2 focus-visible:ring-brand-light focus-visible:ring-offset-2 focus-visible:outline-none",
                           active
-                            ? "bg-navy text-white"
-                            : "bg-card text-muted-foreground ring-1 ring-foreground/10 hover:bg-blue/10 hover:text-navy",
+                            ? "bg-brand text-white"
+                            : "bg-card text-muted-foreground ring-1 ring-foreground/10 hover:bg-brand-light/10 hover:text-brand",
                         )}
                       >
                         {category}
@@ -189,7 +189,7 @@ export function ResourceLibrary({ documents }: { documents: DocumentItem[] }) {
                 {groups.map((group, index) => (
                   <Reveal key={group.category} delay={index * 0.05}>
                     <div>
-                      <h2 className="font-heading text-xl font-bold text-navy sm:text-2xl">
+                      <h2 className="font-heading text-xl font-bold text-brand sm:text-2xl">
                         {group.category}
                       </h2>
                       <div className="mt-5 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">

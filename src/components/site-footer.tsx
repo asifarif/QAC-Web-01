@@ -13,7 +13,7 @@ const hitecLinks = [
   },
   
   { title: "National Computing Education Accreditation Council (NCEAC)", 
-    href: "https://www.nceac.org.pk" },
+    href: "https://nceac.org.pk/" },
 
 
 ];
@@ -22,7 +22,7 @@ export function SiteFooter() {
   const year = new Date().getFullYear();
 
   return (
-    <footer className="bg-navy text-white/80">
+    <footer className="bg-brand text-white/80">
       <div className="mx-auto w-full max-w-6xl px-4 sm:px-6 lg:px-8 grid gap-10 py-14 md:grid-cols-3">
         {/* Contact */}
         <div>

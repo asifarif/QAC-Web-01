@@ -42,14 +42,14 @@ const POLICY_ITEMS = [
 ];
 
 const triggerClass =
-  "py-4 font-heading text-base font-semibold text-navy hover:no-underline sm:text-lg";
+  "py-4 font-heading text-base font-semibold text-brand hover:no-underline sm:text-lg";
 
 const labelClass =
-  "block text-xs font-semibold tracking-wider text-navy uppercase";
+  "block text-xs font-semibold tracking-wider text-brand uppercase";
 
 const cardClass = "rounded-lg bg-surface p-4 ring-1 ring-foreground/5";
 
-const highlightClass = "rounded-lg border-l-4 border-blue bg-blue/5 p-4";
+const highlightClass = "rounded-lg border-l-4 border-brand-light bg-brand-light/5 p-4";
 
 export function AboutAccordion({
   team,
@@ -102,7 +102,7 @@ export function AboutAccordion({
           </AccordionTrigger>
           <AccordionContent className="pt-1 pb-6">
             <p className="text-base text-muted-foreground">{POLICY_INTRO}</p>
-            <ul className="mt-3 list-disc space-y-2 pl-5 text-base text-muted-foreground marker:text-blue">
+            <ul className="mt-3 list-disc space-y-2 pl-5 text-base text-muted-foreground marker:text-brand-light">
               {POLICY_ITEMS.map((item) => (
                 <li key={item.slice(0, 24)}>{item}</li>
               ))}
@@ -119,7 +119,7 @@ export function AboutAccordion({
             <div className="grid gap-4 sm:grid-cols-2">
               {focusAreas.map((item) => (
                 <div key={item.title} className={cardClass}>
-                  <span className="block font-semibold text-navy">
+                  <span className="block font-semibold text-brand">
                     {item.title}
                   </span>
                   <span className="mt-1 block text-sm text-muted-foreground">
@@ -145,7 +145,7 @@ export function AboutAccordion({
               <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
                 {team.map((member, index) => (
                   <div key={`${member.name}-${index}`} className={cardClass}>
-                    <span className="block font-semibold text-navy">
+                    <span className="block font-semibold text-brand">
                       {member.name}
                     </span>
                     {member.designation ? (
@@ -178,7 +178,7 @@ export function AboutAccordion({
               <div className="mt-4 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
                 {liaison.map((officer, index) => (
                   <div key={`${officer.name}-${index}`} className={cardClass}>
-                    <span className="block font-semibold text-navy">
+                    <span className="block font-semibold text-brand">
                       {officer.name}
                     </span>
                     {officer.designation ? (
@@ -187,7 +187,7 @@ export function AboutAccordion({
                       </span>
                     ) : null}
                     {officer.department ? (
-                      <span className="mt-1 block text-xs font-medium tracking-wider text-blue uppercase">
+                      <span className="mt-1 block text-xs font-medium tracking-wider text-brand-light uppercase">
                         {officer.department}
                       </span>
                     ) : null}

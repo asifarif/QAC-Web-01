@@ -29,11 +29,11 @@ export function LatestActivities() {
   return (
     <section className="bg-card">
       <div className="site-container py-20">
-        <Reveal className="max-w-2xl">
+        <Reveal className="max-w-3xl">
           <h2 className="font-heading text-3xl font-bold text-navy sm:text-4xl">
             Latest activities
           </h2>
-          <p className="mt-4 text-base text-muted-foreground sm:text-lg">
+          <p className="mt-4 text-base text-pretty text-muted-foreground sm:text-lg">
             Recent initiatives and engagements from the Directorate.
           </p>
         </Reveal>

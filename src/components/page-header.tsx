@@ -17,11 +17,11 @@ export function PageHeader({ title, subtitle, eyebrow }: PageHeaderProps) {
             {eyebrow}
           </p>
         ) : null}
-        <h1 className="mt-2 font-heading text-3xl font-bold sm:text-4xl md:text-5xl">
+        <h1 className="mt-2 font-heading text-3xl font-bold text-balance sm:text-4xl md:text-5xl">
           {title}
         </h1>
         {subtitle ? (
-          <p className="mt-4 max-w-2xl text-base text-white/70 sm:text-lg">
+          <p className="mt-4 max-w-4xl text-base text-pretty text-white/70 sm:text-lg">
             {subtitle}
           </p>
         ) : null}

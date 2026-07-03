@@ -27,7 +27,7 @@ export default function StudentExchangePage() {
 
       <section className="site-container py-16">
         <Reveal>
-          <p className="text-base leading-relaxed text-muted-foreground sm:text-lg">
+          <p className="max-w-3xl text-base leading-relaxed text-pretty text-muted-foreground sm:text-lg">
             {INTRO}
           </p>
         </Reveal>
@@ -38,7 +38,7 @@ export default function StudentExchangePage() {
             <h2 className="font-heading text-2xl font-bold text-navy sm:text-3xl">
               How it works
             </h2>
-            <p className="mt-4 text-base leading-relaxed text-muted-foreground">
+            <p className="mt-4 max-w-3xl text-base leading-relaxed text-pretty text-muted-foreground">
               Student exchange is facilitated through the{" "}
               <strong className="font-semibold text-navy">
                 Asia Technological University Network (ATU-Net)
@@ -111,7 +111,7 @@ export default function StudentExchangePage() {
 
         {/* Closing */}
         <Reveal delay={0.16}>
-          <p className="mt-12 text-base leading-relaxed text-muted-foreground">
+          <p className="mt-12 max-w-3xl text-base leading-relaxed text-pretty text-muted-foreground">
             We are actively expanding both our exchange partnerships and our
             quality assurance networks — further opportunities will be announced
             here.

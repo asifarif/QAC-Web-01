@@ -1,5 +1,7 @@
 export type NavItem = {
   title: string;
+  /** Optional shorter label for the top bar and mobile menu; the footer always uses `title`. */
+  shortTitle?: string;
   href: string;
   children?: NavItem[];
 };
@@ -12,7 +14,7 @@ export type NavItem = {
  */
 export const navItems: NavItem[] = [
   { title: "Home", href: "/" },
-  { title: "About QA&C", href: "/about" },
+  { title: "About QA&C", shortTitle: "About", href: "/about" },
   {
     title: "Quality Assurance",
     href: "/quality-assurance",
@@ -40,6 +42,10 @@ export const navItems: NavItem[] = [
     ],
   },
   { title: "Activities", href: "/activities" },
-  { title: "Resources", href: "/resources" },
+  {
+    title: "Resources",
+    href: "/resources",
+    children: [{ title: "Useful Links", href: "/useful-links" }],
+  },
   { title: "Contact", href: "/contact" },
 ];

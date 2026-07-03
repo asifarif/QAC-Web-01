@@ -22,7 +22,7 @@ export function GalleryMarquee() {
           <h2 className="font-heading text-3xl font-bold text-navy sm:text-4xl">
             In Pictures
           </h2>
-          <p className="mt-4 text-base text-muted-foreground sm:text-lg">
+          <p className="mt-4 text-base text-pretty text-muted-foreground sm:text-lg">
             Moments from the Directorate&apos;s activities and engagements.
           </p>
         </div>

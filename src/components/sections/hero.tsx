@@ -9,7 +9,7 @@ export function Hero() {
   return (
     <section className="relative overflow-hidden bg-navy text-white">
       <GridGlow />
-      <div className="relative mx-auto max-w-9xl px-4 py-24 text-center sm:px-6 md:py-15 lg:px-8">
+      <div className="site-container relative py-24 text-center md:py-15">
         <Reveal className="flex justify-center">
           <span className="inline-flex items-center rounded-full border border-white/15 bg-white/5 px-4 py-1.5 text-xl font-medium tracking-wider text-white/70 uppercase">
             HITEC University · Taxila
@@ -17,13 +17,13 @@ export function Hero() {
         </Reveal>
 
         <Reveal delay={0.08}>
-          <h1 className="mx-auto mt-6 max-w-4xl font-heading text-4xl font-bold leading-[1.1] sm:text-5xl md:text-6xl">
+          <h1 className="mx-auto mt-6 max-w-4xl font-heading text-4xl font-bold text-balance leading-[1.1] sm:text-5xl md:text-6xl">
             Directorate of Quality Assurance &amp; Collaborations
           </h1>
         </Reveal>
 
         <Reveal delay={0.16}>
-          <p className="mx-auto mt-6 max-w-2xl text-lg text-white/70 sm:text-xl">
+          <p className="mx-auto mt-6 max-w-4xl text-lg text-pretty text-white/70 sm:text-xl">
             Upholding quality, advancing recognition, and building partnerships
             at HITEC University.
           </p>

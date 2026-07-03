@@ -12,7 +12,7 @@ export function WhatWeDo() {
           <h2 className="font-heading text-3xl font-bold text-navy sm:text-4xl">
             What we do
           </h2>
-          <p className="mt-4 text-base text-muted-foreground sm:text-lg">
+          <p className="mt-4 text-base text-pretty text-muted-foreground sm:text-lg">
             Focus areas through which the Directorate safeguards standards and
             builds recognition for HITEC University.
           </p>

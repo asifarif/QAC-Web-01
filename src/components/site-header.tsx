@@ -54,7 +54,7 @@ function Brand() {
 }
 
 const desktopLinkClass =
-  "rounded-md px-3 py-2 text-sm font-medium text-white/75 transition-colors hover:bg-white/10 hover:text-white focus:bg-white/10 focus:text-white data-active:bg-white/10 data-active:text-gold";
+  "rounded-md px-3 py-2 text-sm font-medium whitespace-nowrap text-white/75 transition-colors hover:bg-white/10 hover:text-white focus:bg-white/10 focus:text-white data-active:bg-white/10 data-active:text-gold";
 
 export function SiteHeader() {
   const pathname = usePathname();
@@ -83,11 +83,13 @@ export function SiteHeader() {
                 <NavigationMenuItem key={item.href}>
                   <NavigationMenuTrigger
                     className={cn(
-                      "h-auto bg-transparent px-3 py-2 text-sm font-medium text-white/75 hover:bg-white/10 hover:text-white focus:bg-white/10 focus:text-white data-open:bg-white/10 data-open:text-white data-open:hover:bg-white/10 data-open:focus:bg-white/10 data-popup-open:bg-white/10 data-popup-open:hover:bg-white/10",
-                      isActive(item.href) && "text-gold",
+                      "h-auto bg-transparent px-3 py-2 text-sm font-medium whitespace-nowrap text-white/75 hover:bg-white/10 hover:text-white focus:bg-white/10 focus:text-white data-open:bg-white/10 data-open:text-white data-open:hover:bg-white/10 data-open:focus:bg-white/10 data-popup-open:bg-white/10 data-popup-open:hover:bg-white/10",
+                      (isActive(item.href) ||
+                        item.children.some((child) => isActive(child.href))) &&
+                        "text-gold",
                     )}
                   >
-                    {item.title}
+                    {item.shortTitle ?? item.title}
                   </NavigationMenuTrigger>
                   <NavigationMenuContent>
                     <ul className="grid w-72 gap-1 p-2">
@@ -121,7 +123,7 @@ export function SiteHeader() {
                     active={isActive(item.href)}
                     className={desktopLinkClass}
                   >
-                    <Link href={item.href}>{item.title}</Link>
+                    <Link href={item.href}>{item.shortTitle ?? item.title}</Link>
                   </NavigationMenuLink>
                 </NavigationMenuItem>
               ),
@@ -185,7 +187,7 @@ export function SiteHeader() {
                         isActive(item.href) && "bg-white/10 text-gold",
                       )}
                     >
-                      {item.title}
+                      {item.shortTitle ?? item.title}
                     </Link>
                   </SheetClose>
                 ),
@@ -220,7 +222,7 @@ function MobileGroup({
               isActive(item.href) && "text-gold",
             )}
           >
-            {item.title}
+            {item.shortTitle ?? item.title}
           </Link>
         </SheetClose>
         <button

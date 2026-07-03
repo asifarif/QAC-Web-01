@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { MapPin, Phone } from "lucide-react";
+import { Mail, MapPin, Phone } from "lucide-react";
 
 import { navItems } from "@/lib/nav";
 
@@ -38,6 +38,15 @@ export function SiteFooter() {
               <Phone className="mt-0.5 size-4 shrink-0 text-gold" />
               <a href="tel:+92519490814649" className="hover:text-white">
                 +92-51-9490 8146-49
+              </a>
+            </li>
+            <li className="flex gap-3">
+              <Mail className="mt-0.5 size-4 shrink-0 text-gold" />
+              <a
+                href="mailto:director.qec@hitecuni.edu.pk"
+                className="hover:text-white"
+              >
+                director.qec@hitecuni.edu.pk
               </a>
             </li>
           </ul>

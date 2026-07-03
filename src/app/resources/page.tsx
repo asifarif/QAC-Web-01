@@ -1,28 +1,19 @@
 import type { Metadata } from "next";
 
-import { PageHeader } from "@/components/page-header";
+import { ResourceLibrary } from "@/components/sections/resource-library";
+import { getDocuments } from "@/lib/sheets";
 
 export const metadata: Metadata = {
   title: "Resources",
 };
 
-// NOTE: In a later MVP this page becomes the searchable document library
-// (policies, SAR templates, guidelines, reports) and, subsequently, the source
-// corpus for the RAG-powered assistant. For MVP 0 it is a static placeholder.
-export default function ResourcesPage() {
-  return (
-    <>
-      <PageHeader
-        eyebrow="Library"
-        title="Resources"
-        subtitle="Policies, templates, guidelines and reports for quality assurance."
-      />
-      <section className="site-container py-20">
-        <p className="text-lg text-muted-foreground">
-          Coming soon. This page will become a searchable document library for
-          quality-assurance resources.
-        </p>
-      </section>
-    </>
-  );
+export const runtime = "nodejs";
+// ISR: re-fetch the documents tab at most every 5 minutes.
+export const revalidate = 300;
+
+// NOTE: this document library is the future source corpus for the RAG-powered
+// assistant (later MVP).
+export default async function ResourcesPage() {
+  const docs = await getDocuments();
+  return <ResourceLibrary documents={docs} />;
 }

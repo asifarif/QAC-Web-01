@@ -258,3 +258,18 @@ export async function getMemberships(): Promise<Membership[]> {
   ]);
   return rows.sort((a, b) => (a.order ?? 1e9) - (b.order ?? 1e9));
 }
+/* --------------------------- important links --------------------------- */
+const importantLinkSchema = z.object({
+  title: z.string().trim().min(1, "title is required"),
+  url: z.string().trim().min(1, "url is required"),
+  category: z.string().trim().optional().default(""),
+  description: z.string().trim().optional().default(""),
+  order: optionalNum,
+});
+export type ImportantLink = z.infer<typeof importantLinkSchema>;
+export async function getImportantLinks(): Promise<ImportantLink[]> {
+  const rows = await loadTab("important_links", importantLinkSchema, [
+    "title", "url", "category", "description", "order",
+  ]);
+  return rows.sort((a, b) => (a.order ?? 1e9) - (b.order ?? 1e9));
+}

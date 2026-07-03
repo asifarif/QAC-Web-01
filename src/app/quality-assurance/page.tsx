@@ -46,7 +46,7 @@ export default async function QualityAssurancePage() {
       />
 
       <section className="site-container py-16">
-        <p className="text-base leading-relaxed text-muted-foreground sm:text-lg">
+        <p className="max-w-3xl text-base leading-relaxed text-pretty text-muted-foreground sm:text-lg">
           {INTRO}
         </p>
 

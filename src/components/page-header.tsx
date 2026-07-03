@@ -11,7 +11,7 @@ export function PageHeader({ title, subtitle, eyebrow }: PageHeaderProps) {
   return (
     <section className="relative overflow-hidden bg-navy text-white">
       <GridGlow />
-      <div className="site-container relative py-16 md:py-20">
+      <div className="mx-auto w-full max-w-6xl px-4 sm:px-6 lg:px-8 relative py-16 md:py-20">
         {eyebrow ? (
           <p className="text-sm font-semibold tracking-wider text-gold uppercase">
             {eyebrow}
@@ -21,7 +21,7 @@ export function PageHeader({ title, subtitle, eyebrow }: PageHeaderProps) {
           {title}
         </h1>
         {subtitle ? (
-          <p className="mt-4 max-w-4xl text-base text-pretty text-white/70 sm:text-lg">
+          <p className="mt-4 text-base text-pretty text-white/70 sm:text-lg">
             {subtitle}
           </p>
         ) : null}

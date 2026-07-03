@@ -28,8 +28,8 @@ const activities = [
 export function LatestActivities() {
   return (
     <section className="bg-card">
-      <div className="site-container py-20">
-        <Reveal className="max-w-3xl">
+      <div className="mx-auto w-full max-w-6xl px-4 sm:px-6 lg:px-8 py-20">
+        <Reveal>
           <h2 className="font-heading text-3xl font-bold text-navy sm:text-4xl">
             Latest activities
           </h2>

@@ -23,7 +23,7 @@ export function SiteFooter() {
 
   return (
     <footer className="bg-navy text-white/80">
-      <div className="site-container grid gap-10 py-14 md:grid-cols-3">
+      <div className="mx-auto w-full max-w-6xl px-4 sm:px-6 lg:px-8 grid gap-10 py-14 md:grid-cols-3">
         {/* Contact */}
         <div>
           <h3 className="font-heading text-base font-semibold text-white">
@@ -44,6 +44,15 @@ export function SiteFooter() {
               <Phone className="mt-0.5 size-4 shrink-0 text-gold" />
               <a href="tel:+92519490814649" className="hover:text-white">
                 +92-51-9490 8146-49
+              </a>
+            </li>
+            <li className="flex gap-3">
+              <Mail className="mt-0.5 size-4 shrink-0 text-gold" />
+              <a
+                href="mailto:director.qec@hitecuni.edu.pk"
+                className="hover:text-white"
+              >
+                director.qec@hitecuni.edu.pk
               </a>
             </li>
           </ul>
@@ -105,7 +114,7 @@ export function SiteFooter() {
       </div>
 
       <div className="border-t border-white/10">
-        <div className="site-container py-6 text-sm text-white/60">
+        <div className="mx-auto w-full max-w-6xl px-4 sm:px-6 lg:px-8 py-6 text-sm text-white/60">
           © {year} Directorate of Quality Assurance &amp; Collaborations, HITEC
           University. All rights reserved.
         </div>

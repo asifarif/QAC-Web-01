@@ -14,13 +14,12 @@ export const revalidate = 300;
 
 const INTRO =
   "Quality at programme level is assured through two complementary routes. " +
-  "Programmes under a discipline-specific accreditation council are reviewed by " +
-  "that council; programmes outside any council are reviewed through the HEC " +
-  "self-assessment cycle by the QA&C. Engineering programmes are accredited by " +
-  "the Pakistan Engineering Council (PEC), computing programmes by the National " +
-  "Computing Education Accreditation Council (NCEAC), and business programmes by " +
-  "the National Business Education Accreditation Council (NBEAC). Self-Assessment " +
-  "Reports (SARs) are prepared for the remaining programmes only.";
+  "Programmes in fields served by a professional accreditation council are " +
+  "reviewed and accredited by the relevant council, while programmes outside " +
+  "any council's remit are assured through the University's internal " +
+  "self-assessment cycle, in which each programme prepares a Self-Assessment " +
+  "Report (SAR) that is independently reviewed in line with the Higher " +
+  "Education Commission's framework.";
 
 type ProgrammeLevelGroups = {
   bs: Programme[];
@@ -67,11 +66,11 @@ export default async function AssessmentAccreditationPage() {
       <PageHeader
         eyebrow="Quality Assurance"
         title="Assessment & Accreditation"
-        subtitle="Programme accreditation status across the PEC, NCEAC and NBEAC councils."
+        subtitle="Accreditation and self-assessment status of the University's academic programmes."
       />
 
-      <section className="site-container py-16">
-        <p className="max-w-3xl text-base leading-relaxed text-pretty text-muted-foreground sm:text-lg">
+      <section className="mx-auto w-full max-w-6xl px-4 sm:px-6 lg:px-8 py-16">
+        <p className="text-base leading-relaxed text-pretty text-muted-foreground sm:text-lg">
           {INTRO}
         </p>
 

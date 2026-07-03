@@ -72,7 +72,7 @@ export function SiteHeader() {
 
   return (
     <header className="sticky top-0 z-50 border-b border-white/10 bg-navy text-white">
-      <div className="site-container flex h-16 items-center justify-between gap-4">
+      <div className="mx-auto w-full max-w-6xl px-4 sm:px-6 lg:px-8 flex h-16 items-center justify-between gap-4">
         <Brand />
 
         {/* Desktop navigation */}

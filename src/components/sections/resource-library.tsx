@@ -126,7 +126,7 @@ export function ResourceLibrary({ documents }: { documents: DocumentItem[] }) {
         subtitle="Policies, templates, forms and reference documents published by the Directorate."
       />
 
-      <section className="site-container py-16">
+      <section className="mx-auto w-full max-w-6xl px-4 sm:px-6 lg:px-8 py-16">
         {documents.length === 0 ? (
           <div className="mt-12 rounded-xl border border-dashed border-border bg-surface px-6 py-16 text-center">
             <p className="mx-auto max-w-md text-base text-muted-foreground">

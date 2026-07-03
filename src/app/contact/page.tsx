@@ -15,7 +15,7 @@ export default function ContactPage() {
         title="Contact"
         subtitle="Reach the Directorate of Quality Assurance & Collaborations."
       />
-      <section className="site-container py-16">
+      <section className="mx-auto w-full max-w-6xl px-4 sm:px-6 lg:px-8 py-16">
         <ContactDetails />
       </section>
     </>

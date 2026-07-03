@@ -28,7 +28,7 @@ export default async function ActivitiesPage() {
         subtitle="June 2025 – July 2026"
       />
 
-      <section className="site-container py-16">
+      <section className="mx-auto w-full max-w-6xl px-4 sm:px-6 lg:px-8 py-16">
         {groups.length === 0 ? (
           <div className="rounded-xl border border-dashed border-border bg-surface px-6 py-16 text-center">
             <p className="mx-auto max-w-md text-base text-muted-foreground">

@@ -167,7 +167,7 @@ export default function RipePage() {
       />
 
       {/* 1. What is RIPE? */}
-      <section className="site-container py-16">
+      <section className="mx-auto w-full max-w-6xl px-4 sm:px-6 lg:px-8 py-16">
         <Reveal>
           <div className="grid gap-8 lg:grid-cols-3">
             <div className="lg:col-span-2">
@@ -211,8 +211,8 @@ export default function RipePage() {
 
       {/* 2. The RIPE Process */}
       <section className="bg-surface">
-        <div className="site-container py-16">
-          <Reveal className="max-w-3xl">
+        <div className="mx-auto w-full max-w-6xl px-4 sm:px-6 lg:px-8 py-16">
+          <Reveal>
             <h2 className="font-heading text-2xl font-bold text-navy sm:text-3xl">
               The RIPE Process
             </h2>
@@ -236,8 +236,8 @@ export default function RipePage() {
       </section>
 
       {/* 3. RIPE Standards */}
-      <section className="site-container py-16">
-        <Reveal className="max-w-3xl">
+      <section className="mx-auto w-full max-w-6xl px-4 sm:px-6 lg:px-8 py-16">
+        <Reveal>
           <h2 className="font-heading text-2xl font-bold text-navy sm:text-3xl">
             RIPE Standards
           </h2>
@@ -272,7 +272,7 @@ export default function RipePage() {
         </div>
 
         {/* 4. Footnote */}
-        <p className="mt-12 max-w-3xl text-xs leading-relaxed text-pretty text-muted-foreground">
+        <p className="mt-12 text-xs leading-relaxed text-pretty text-muted-foreground">
           Based on the HEC Guidelines for Self-Review of Institutional
           Performance and Enhancement (RIPE for IQA).{" "}
           <a

@@ -273,3 +273,22 @@ export async function getImportantLinks(): Promise<ImportantLink[]> {
   ]);
   return rows.sort((a, b) => (a.order ?? 1e9) - (b.order ?? 1e9));
 }
+
+/* ---------------------------- site content ---------------------------- */
+const siteContentSchema = z.object({
+  key: z.string().trim().min(1, "key is required"),
+  value: z.string().trim().optional().default(""),
+});
+export async function getSiteContent(): Promise<Record<string, string>> {
+  const rows = await loadTab("site_content", siteContentSchema, ["key", "value"]);
+  return Object.fromEntries(rows.map((r) => [r.key, r.value]));
+}
+export function getDirectorMessage(content: Record<string, string>): string[] {
+  const paras: string[] = [];
+  for (let i = 1; ; i++) {
+    const p = content[`director_message_${i}`];
+    if (!p) break;
+    paras.push(p);
+  }
+  return paras;
+}

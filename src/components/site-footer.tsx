@@ -5,11 +5,17 @@ import { navItems } from "@/lib/nav";
 
 const hitecLinks = [
   { title: "HITEC University", href: "https://www.hitecuni.edu.pk" },
+  { title: "Heavy Industries Taxila (HIT)", href: "https://www.hit.gov.pk" },
   { title: "Higher Education Commission (HEC)", href: "https://www.hec.gov.pk" },
   {
     title: "Pakistan Engineering Council (PEC)",
     href: "https://www.pec.org.pk",
   },
+  
+  { title: "National Computing Education Accreditation Council (NCEAC)", 
+    href: "https://www.nceac.org.pk" },
+
+
 ];
 
 export function SiteFooter() {
@@ -38,15 +44,6 @@ export function SiteFooter() {
               <Phone className="mt-0.5 size-4 shrink-0 text-gold" />
               <a href="tel:+92519490814649" className="hover:text-white">
                 +92-51-9490 8146-49
-              </a>
-            </li>
-            <li className="flex gap-3">
-              <Mail className="mt-0.5 size-4 shrink-0 text-gold" />
-              <a
-                href="mailto:director.qec@hitecuni.edu.pk"
-                className="hover:text-white"
-              >
-                director.qec@hitecuni.edu.pk
               </a>
             </li>
           </ul>

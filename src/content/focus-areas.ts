@@ -37,7 +37,7 @@ export const focusAreas: FocusArea[] = [
   {
     title: "Accreditation & Compliance",
     description:
-      "Support for PEC, NCEAC and NBEAC accreditation and compliance with HEC requirements.",
+      "Support for accreditation and compliance with HEC requirements.",
     href: "/quality-assurance/assessment-accreditation",
     icon: Award,
   },

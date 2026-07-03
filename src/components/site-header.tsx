@@ -54,7 +54,7 @@ function Brand() {
 }
 
 const desktopLinkClass =
-  "rounded-md px-3 py-2 text-sm font-medium whitespace-nowrap text-white/75 transition-colors hover:bg-white/10 hover:text-white focus:bg-white/10 focus:text-white data-active:bg-white/10 data-active:text-gold";
+  "rounded-md px-3 py-2 text-sm font-medium whitespace-nowrap text-white/75 transition-colors hover:bg-white/10 hover:text-white focus:bg-white/10 focus:text-white data-active:bg-[#d1b9bb] data-active:text-brand data-active:hover:bg-[#d1b9bb] data-active:hover:text-brand data-active:focus:bg-[#d1b9bb] data-active:focus:text-brand";
 
 export function SiteHeader() {
   const pathname = usePathname();
@@ -83,7 +83,7 @@ export function SiteHeader() {
                 <NavigationMenuItem key={item.href}>
                   <NavigationMenuTrigger
                     className={cn(
-                      "h-auto bg-transparent px-3 py-2 text-sm font-medium whitespace-nowrap text-white/75 hover:bg-white/10 hover:text-white focus:bg-white/10 focus:text-white data-open:bg-white/10 data-open:text-white data-open:hover:bg-white/10 data-open:focus:bg-white/10 data-popup-open:bg-white/10 data-popup-open:hover:bg-white/10",
+                      "h-auto bg-transparent px-3 py-2 text-sm font-medium whitespace-nowrap text-white/75 hover:bg-white/10 hover:text-white focus:bg-white/10 focus:text-white data-open:bg-[#d1b9bb] data-open:text-brand data-open:hover:bg-[#d1b9bb] data-open:hover:text-brand data-open:focus:bg-[#d1b9bb] data-open:focus:text-brand data-popup-open:bg-[#d1b9bb] data-popup-open:text-brand data-popup-open:hover:bg-[#d1b9bb] data-popup-open:hover:text-brand",
                       (isActive(item.href) ||
                         item.children.some((child) => isActive(child.href))) &&
                         "text-gold",
